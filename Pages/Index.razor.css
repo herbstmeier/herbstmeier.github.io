@@ -1,0 +1,27 @@
+.index-container {
+    display: flex;
+    white-space: pre-line;
+}
+
+.pitch {
+    font-size: 1.5rem;
+}
+
+.gif-container {
+    display: flex;
+    justify-content: center;
+}
+
+.email-container {
+    display: flex;
+}
+
+.email-container p {
+    margin-right: 1rem;
+}
+
+.email-container a {
+    color: black;
+    text-decoration: underline;
+    text-decoration-color: rgb(90, 192, 192);
+}

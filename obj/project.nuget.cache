@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "QLMnUNS5XhWA1rRWrrr1qiVNNujctv7avqkEljbtA0jOKR6y+VAlwDH+3aZPiCzzU/xfwexAbViZljfjAruG5Q==",
+  "dgSpecHash": "H4bNSXFkwGgZFT7h48kZyX+kv5EPMr838V1Pn0jVTT7cG01QV8pBzYjtVpePSlnND9R9F5SHnWLEXsH1kcGqIg==",
   "success": true,
   "projectFilePath": "S:\\Documents\\Programs\\homepage\\homepage.csproj",
   "expectedPackageFiles": [
@@ -22,8 +22,10 @@
     "C:\\Users\\Moritz\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\6.0.0\\microsoft.extensions.fileproviders.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\Moritz\\.nuget\\packages\\microsoft.extensions.fileproviders.physical\\6.0.0\\microsoft.extensions.fileproviders.physical.6.0.0.nupkg.sha512",
     "C:\\Users\\Moritz\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\6.0.0\\microsoft.extensions.filesystemglobbing.6.0.0.nupkg.sha512",
+    "C:\\Users\\Moritz\\.nuget\\packages\\microsoft.extensions.localization\\6.0.11\\microsoft.extensions.localization.6.0.11.nupkg.sha512",
+    "C:\\Users\\Moritz\\.nuget\\packages\\microsoft.extensions.localization.abstractions\\6.0.11\\microsoft.extensions.localization.abstractions.6.0.11.nupkg.sha512",
     "C:\\Users\\Moritz\\.nuget\\packages\\microsoft.extensions.logging\\6.0.0\\microsoft.extensions.logging.6.0.0.nupkg.sha512",
-    "C:\\Users\\Moritz\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.2\\microsoft.extensions.logging.abstractions.6.0.2.nupkg.sha512",
+    "C:\\Users\\Moritz\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.3\\microsoft.extensions.logging.abstractions.6.0.3.nupkg.sha512",
     "C:\\Users\\Moritz\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
     "C:\\Users\\Moritz\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
     "C:\\Users\\Moritz\\.nuget\\packages\\microsoft.jsinterop\\6.0.10\\microsoft.jsinterop.6.0.10.nupkg.sha512",
@@ -33,7 +35,7 @@
     "C:\\Users\\Moritz\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\Moritz\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
     "C:\\Users\\Moritz\\.nuget\\packages\\system.text.json\\6.0.0\\system.text.json.6.0.0.nupkg.sha512",
-    "C:\\Users\\Moritz\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.10\\microsoft.netcore.app.runtime.mono.browser-wasm.6.0.10.nupkg.sha512"
+    "C:\\Users\\Moritz\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.11\\microsoft.netcore.app.runtime.mono.browser-wasm.6.0.11.nupkg.sha512"
   ],
   "logs": []
 }

@@ -1,17 +1,76 @@
 ﻿@inherits LayoutComponentBase
+@using System.Globalization
+@inject IStringLocalizer<MainLayout> Loc
+@inject NavigationManager NavManager
 
 <div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
-
     <main>
-        <div class="top-row px-4">
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+        <div class="top-row">
+            @for (int i = 0; i < 4; i++)
+            {
+                int j = i; //help iterator
+                <a class="@((selectedPage==j) ? "active" : "")" @onclick="() => setSelectedPage(j)"
+                href="@paths[j]">@Loc[paths[j]]</a>
+            }
+            <CultureSelector />
         </div>
 
-        <article class="content px-4">
+        <article class="content">
+            <div class="heading-container">
+                @if (selectedPage == 0)
+                {
+                    <h1>moritz</h1>
+                    <h1 class="last-name highlight">herbstmeier</h1>
+                }
+                else
+                {
+                    <h1 class="highlight">@title</h1>
+                }
+
+            </div>
             @Body
         </article>
     </main>
 </div>
+@code {
+    private int selectedPage = 0;
+    private string? title;
+    private string? currentUrl;
+    private string[] paths = new[]
+    {
+"home",
+"about",
+"projects",
+"resume"
+};
+
+    protected override void OnInitialized()
+    {
+        currentUrl = NavManager.ToBaseRelativePath(NavManager.Uri);
+        switch (currentUrl)
+        {
+            case "home":
+                selectedPage = 0;
+                break;
+            case "about":
+                selectedPage = 1;
+                break;
+            case "projects":
+                selectedPage = 2;
+                break;
+            case "resume":
+                selectedPage = 3;
+                break;
+        }
+
+        title = Loc[paths[selectedPage]];
+    }
+
+
+
+    public void setSelectedPage(int page)
+    {
+        selectedPage = page;
+        title = Loc[paths[selectedPage]];
+    }
+}

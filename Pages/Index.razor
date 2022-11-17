@@ -1,9 +1,32 @@
-﻿@page "/"
+﻿@page "/home"
+@page "/"
+@inject NavigationManager NavManager
+@inject IStringLocalizer<Index> Loc
 
-<PageTitle>Index</PageTitle>
+<PageTitle>moritz herbstmeier | @Loc["title"]</PageTitle>
 
-<h1>Hello, world!</h1>
+<div class="index-container">
+    <div class="pitch-container">
+        <p class="pitch">@Loc["pitch"]</p>
+        <div class="email-container">
+            <p>@Loc["contact"]</p>
+            <a href="mailto: moritz.herbstmeier@gmx.de">moritz.herbstmeier@gmx.de</a>
+        </div>
+    </div>
+</div>
 
-Welcome to your new app.
+@code {
+    private string? pitch;
+    protected override void OnParametersSet()
+    {
+        if (NavManager.ToBaseRelativePath(NavManager.Uri) == "")
+        {
+            NavManager.NavigateTo("/home");
+        }
+    }
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+    protected override void OnInitialized()
+    {
+        //pitch = pitch.Insert(pitch.IndexOf(".") + 1, "\n");
+    }
+}
