@@ -1,40 +1,98 @@
+/* /Pages/Index.razor.rz.scp.css */
+.index-container[b-7964zury9s] {
+    display: flex;
+    white-space: pre-line;
+}
+
+.pitch[b-7964zury9s] {
+    font-size: 1.5rem;
+}
+
+.gif-container[b-7964zury9s] {
+    display: flex;
+    justify-content: center;
+}
+
+.email-container[b-7964zury9s] {
+    display: flex;
+}
+
+.email-container p[b-7964zury9s] {
+    margin-right: 1rem;
+}
+
+.email-container a[b-7964zury9s] {
+    color: black;
+    text-decoration: underline;
+    text-decoration-color: rgb(90, 192, 192);
+}
+/* /Shared/CultureSelector.razor.rz.scp.css */
+.culture-selector[b-ll9xidp27a] {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    margin-right: 2rem;
+}
 /* /Shared/MainLayout.razor.rz.scp.css */
 .page[b-6ekk99mgqr] {
     position: relative;
     display: flex;
     flex-direction: column;
-}
+    font-family: Sono;
+    overflow: hidden;
+}    
 
 main[b-6ekk99mgqr] {
     flex: 1;
 }
 
-.sidebar[b-6ekk99mgqr] {
-    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+.heading-container h1[b-6ekk99mgqr] {
+    font-size: 3rem;
 }
 
 .top-row[b-6ekk99mgqr] {
-    background-color: #f7f7f7;
-    border-bottom: 1px solid #d6d5d5;
-    justify-content: flex-end;
-    height: 3.5rem;
-    display: flex;
+    display: grid;
+    justify-items: center;
     align-items: center;
+    grid-template-columns: 1fr repeat(4, auto) 1fr;
+    height: 10vh;
+    font-size: 1rem;
 }
+
+.top-row[b-6ekk99mgqr]::before {
+    content: "";
+    position: absolute;
+    left: -31%;
+    top: -2rem;
+    height: 12rem;
+    width: 200%;
+    background-color: rgba(90, 192, 192, 0.5);
+    border-bottom: 0.5rem solid rgb(90, 192, 192);
+    transform: rotate(2deg);
+    z-index: -1;
+}
+
+    .top-row[b-6ekk99mgqr]  a.active {
+        border-bottom: solid 2px black;
+    }
 
     .top-row[b-6ekk99mgqr]  a, .top-row[b-6ekk99mgqr]  .btn-link {
         white-space: nowrap;
-        margin-left: 1.5rem;
+        margin: 0 1rem;
         text-decoration: none;
+        color: unset;
+        font-weight: bold;
+        cursor: pointer;
     }
 
     .top-row[b-6ekk99mgqr]  a:hover, .top-row[b-6ekk99mgqr]  .btn-link:hover {
-        text-decoration: underline;
+        text-shadow: 2px 2px rgb(90, 192, 192);
     }
 
     .top-row[b-6ekk99mgqr]  a:first-child {
         overflow: hidden;
         text-overflow: ellipsis;
+        grid-column-start: 2;
     }
 
 @media (max-width: 640.98px) {
@@ -74,72 +132,15 @@ main[b-6ekk99mgqr] {
         text-align: right;
         width: 0;
     }
-
-    .top-row[b-6ekk99mgqr], article[b-6ekk99mgqr] {
-        padding-left: 2rem !important;
-        padding-right: 1.5rem !important;
-    }
-}
-/* /Shared/NavMenu.razor.rz.scp.css */
-.navbar-toggler[b-dj76q1sy39] {
-    background-color: rgba(255, 255, 255, 0.1);
 }
 
-.top-row[b-dj76q1sy39] {
-    height: 3.5rem;
-    background-color: rgba(0,0,0,0.4);
+.content[b-6ekk99mgqr]  .highlight {
+    text-shadow: 2px 2px white;
+    background-color: rgb(255 134 95 / 50%);
 }
 
-.navbar-brand[b-dj76q1sy39] {
-    font-size: 1.1rem;
-}
-
-.oi[b-dj76q1sy39] {
-    width: 2rem;
-    font-size: 1.1rem;
-    vertical-align: text-top;
-    top: -2px;
-}
-
-.nav-item[b-dj76q1sy39] {
-    font-size: 0.9rem;
-    padding-bottom: 0.5rem;
-}
-
-    .nav-item:first-of-type[b-dj76q1sy39] {
-        padding-top: 1rem;
-    }
-
-    .nav-item:last-of-type[b-dj76q1sy39] {
-        padding-bottom: 1rem;
-    }
-
-    .nav-item[b-dj76q1sy39]  a {
-        color: #d7d7d7;
-        border-radius: 4px;
-        height: 3rem;
-        display: flex;
-        align-items: center;
-        line-height: 3rem;
-    }
-
-.nav-item[b-dj76q1sy39]  a.active {
-    background-color: rgba(255,255,255,0.25);
-    color: white;
-}
-
-.nav-item[b-dj76q1sy39]  a:hover {
-    background-color: rgba(255,255,255,0.1);
-    color: white;
-}
-
-@media (min-width: 641px) {
-    .navbar-toggler[b-dj76q1sy39] {
-        display: none;
-    }
-
-    .collapse[b-dj76q1sy39] {
-        /* Never collapse the sidebar for wide screens */
-        display: block;
-    }
+.content[b-6ekk99mgqr]  .heading-container {
+    width: fit-content;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
 }
