@@ -137,8 +137,4 @@
     <value>my skills:</value>
     <comment/>
   </data>
-  <data name="skills" xml:space="preserve">
-    <value>typescript angular html css sass .net blazor python vhdl arduino c c++</value>
-    <comment/>
-  </data>
 </root>

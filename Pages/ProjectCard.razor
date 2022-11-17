@@ -1,0 +1,20 @@
+@inject IStringLocalizer<Projects> Loc
+
+<div class="card-container">
+    <span class="title">@project.title</span>
+    <img src="@project.imagePath">
+    <p class="description">@project.description</p>
+    <ul class="tags">
+        @foreach (var tag in project.tags)
+        {
+            <li class="highlight">@tag</li>
+        }
+    </ul>
+    <button></button>
+</div>
+
+@code {
+    [Parameter]
+    public Project project { get; set; } = new Project("","","",new List<string>().ToArray(), "");
+
+}

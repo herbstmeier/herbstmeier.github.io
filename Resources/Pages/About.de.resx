@@ -137,8 +137,4 @@
     <value>meine fähigkeiten:</value>
     <comment/>
   </data>
-  <data name="skills" xml:space="preserve">
-    <value>c c++ typescript angular html css sass python vhdl arduino .net blazor</value>
-    <comment/>
-  </data>
 </root>

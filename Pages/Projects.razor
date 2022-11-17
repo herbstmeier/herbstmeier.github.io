@@ -2,3 +2,27 @@
 @inject IStringLocalizer<Projects> Loc
 
 <PageTitle>moritz herbstmeier | @Loc["title"]</PageTitle>
+
+<div class="project-container">
+    @foreach (var project in projects)
+    {
+        <ProjectCard project="@project"></ProjectCard>
+    }
+</div>
+
+@code {
+    private Project[] projects = new List<Project>().ToArray();
+
+    protected override void OnInitialized()
+    {
+        addProject(Loc["alarm-title"], Loc["alarm-description"], "img/projects/9Mkg.gif", new String[2] { "birb", "wow" }, "birb");
+        addProject(Loc["alarm-title"], Loc["alarm-description"], "img/projects/9Mkg.gif", new String[2] { "birb", "wow" }, "birb");
+        addProject(Loc["alarm-title"], Loc["alarm-description"], "img/projects/9Mkg.gif", new String[2] { "birb", "wow" }, "birb");
+        addProject(Loc["alarm-title"], Loc["alarm-description"], "img/projects/9Mkg.gif", new String[2] { "birb", "wow" }, "birb");
+    }
+
+    public void addProject(string title, string description, string imagePath, string[] tags, string url)
+    {
+        projects = projects.Append(new Project(title, description, imagePath, tags, url)).ToArray();
+    }
+}

@@ -6,7 +6,7 @@
 <div class="center-container">
     <div class="about-container">
         <div class="bio-container">
-            <img src="titled.png" alt="">
+            <img src="img/titled.png" alt="">
             <p class="bio">@Loc["bio"]</p>
         </div>
 
@@ -34,11 +34,11 @@
 
 @code {
     private string[] values = { "" };
-    private string[] skills = { "" };
+    private string[] skills = { "typescript","angular","html","css","sass", ".net" ,"blazor", "python" ,"vhdl" ,"arduino",
+"c" ,"c++" };
 
     protected override void OnInitialized()
     {
         values = Loc["values"].ToString().Split(" ");
-        skills = Loc["skills"].ToString().Split(" ");
     }
 }
