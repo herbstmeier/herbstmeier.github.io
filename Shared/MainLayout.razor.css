@@ -1,7 +1,6 @@
 .page {
     position: relative;
     display: flex;
-    flex-direction: column;
     font-family: Sono;
     overflow: hidden;
 }    
@@ -26,14 +25,13 @@ main {
 .top-row::before {
     content: "";
     position: absolute;
-    left: -31%;
-    top: -2rem;
-    height: 12rem;
-    width: 200%;
-    background-color: rgba(90, 192, 192, 0.5);
+    top: -5vh;
+    height: 20vh;
+    width: 100%;
+    background-color: rgb(172 223 223);
     border-bottom: 0.5rem solid rgb(90, 192, 192);
-    transform: rotate(2deg);
     z-index: -1;
+    transform: skewY(2deg);
 }
 
     .top-row ::deep a.active {
@@ -86,9 +84,10 @@ main {
     }
 
     .top-row {
-        position: sticky;
+        position: fixed;
         top: 0;
         z-index: 1;
+        width: 100%;
     }
 
     .top-row.auth ::deep a:first-child {
@@ -96,29 +95,6 @@ main {
         text-align: right;
         width: 0;
     }
-}
-
-.content ::deep .highlight {
-    text-shadow: 2px 2px white;
-    position: relative;
-}
-
-.content ::deep .highlight::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(255 134 95 / 50%);
-    transform: rotate3d(139, 20, -8, 31deg);
-    z-index: -1;
-}
-
-.content ::deep li.highlight {
-    margin: 0.3rem;
-}
-
-.content ::deep li.highlight::before {
-    background-color: rgba(90, 192, 192, 0.5);
 }
 
 .content ::deep .heading-container {

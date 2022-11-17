@@ -1,12 +1,24 @@
+.center-container {
+    display: flex;
+    justify-content: center;
+}
+
 .about-container {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    row-gap: 2rem;
-    justify-items: start;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: start;
 }
 
 .about-container img {
-    border-radius: 1rem;
+    border-radius: 1vh;
+    width: 15rem;
+}
+
+.bio-container {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
 }
 
 .subhead {
@@ -17,4 +29,5 @@
     display: flex;
     flex-direction: row;
     list-style: none;
+    flex-wrap: wrap;
 }

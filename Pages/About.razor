@@ -3,26 +3,32 @@
 
 <PageTitle>moritz herbstmeier | @Loc["title"]</PageTitle>
 
-<div class="about-container">
-    <img src="titled.png" alt="">
-    <p class="bio">@Loc["bio"]</p>
-    <div class="value-container">
-        <span class="subhead">@Loc["value-head"]</span>
-        <ul class="value-list">
-            @foreach (var value in values)
-            {
-                <li>@value</li>
-            }
-        </ul>
-    </div>
-    <div class="skills-container">
-        <span class="subhead">@Loc["skill-head"]</span>
-        <ul class="skill-list">
-            @foreach (var skill in skills)
-            {
-                <li class="highlight">@skill</li>
-            }
-        </ul>
+<div class="center-container">
+    <div class="about-container">
+        <div class="bio-container">
+            <img src="titled.png" alt="">
+            <p class="bio">@Loc["bio"]</p>
+        </div>
+
+        <div class="value-container">
+            <span class="subhead">@Loc["value-head"]</span>
+            <ul class="value-list">
+                @foreach (var value in values)
+                {
+                    <li>@value</li>
+                }
+            </ul>
+        </div>
+
+        <div class="skills-container">
+            <span class="subhead">@Loc["skill-head"]</span>
+            <ul class="skill-list">
+                @foreach (var skill in skills)
+                {
+                    <li class="highlight">@skill</li>
+                }
+            </ul>
+        </div>
     </div>
 </div>
 
