@@ -16,17 +16,11 @@
 </div>
 
 @code {
-    private string? pitch;
     protected override void OnParametersSet()
     {
         if (NavManager.ToBaseRelativePath(NavManager.Uri) == "")
         {
             NavManager.NavigateTo("/home");
         }
-    }
-
-    protected override void OnInitialized()
-    {
-        //pitch = pitch.Insert(pitch.IndexOf(".") + 1, "\n");
     }
 }
