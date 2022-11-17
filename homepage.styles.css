@@ -1,13 +1,25 @@
 /* /Pages/About.razor.rz.scp.css */
+.center-container[b-my74j44zit] {
+    display: flex;
+    justify-content: center;
+}
+
 .about-container[b-my74j44zit] {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    row-gap: 2rem;
-    justify-items: start;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: start;
 }
 
 .about-container img[b-my74j44zit] {
-    border-radius: 1rem;
+    border-radius: 1vh;
+    width: 15rem;
+}
+
+.bio-container[b-my74j44zit] {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
 }
 
 .subhead[b-my74j44zit] {
@@ -18,6 +30,7 @@
     display: flex;
     flex-direction: row;
     list-style: none;
+    flex-wrap: wrap;
 }
 /* /Pages/Index.razor.rz.scp.css */
 .index-container[b-7964zury9s] {
@@ -58,7 +71,6 @@
 .page[b-6ekk99mgqr] {
     position: relative;
     display: flex;
-    flex-direction: column;
     font-family: Sono;
     overflow: hidden;
 }    
@@ -83,14 +95,13 @@ main[b-6ekk99mgqr] {
 .top-row[b-6ekk99mgqr]::before {
     content: "";
     position: absolute;
-    left: -31%;
-    top: -2rem;
-    height: 12rem;
-    width: 200%;
-    background-color: rgba(90, 192, 192, 0.5);
+    top: -5vh;
+    height: 20vh;
+    width: 100%;
+    background-color: rgb(172 223 223);
     border-bottom: 0.5rem solid rgb(90, 192, 192);
-    transform: rotate(2deg);
     z-index: -1;
+    transform: skewY(2deg);
 }
 
     .top-row[b-6ekk99mgqr]  a.active {
@@ -143,9 +154,10 @@ main[b-6ekk99mgqr] {
     }
 
     .top-row[b-6ekk99mgqr] {
-        position: sticky;
+        position: fixed;
         top: 0;
         z-index: 1;
+        width: 100%;
     }
 
     .top-row.auth[b-6ekk99mgqr]  a:first-child {
@@ -153,29 +165,6 @@ main[b-6ekk99mgqr] {
         text-align: right;
         width: 0;
     }
-}
-
-.content[b-6ekk99mgqr]  .highlight {
-    text-shadow: 2px 2px white;
-    position: relative;
-}
-
-.content[b-6ekk99mgqr]  .highlight::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(255 134 95 / 50%);
-    transform: rotate3d(139, 20, -8, 31deg);
-    z-index: -1;
-}
-
-.content[b-6ekk99mgqr]  li.highlight {
-    margin: 0.3rem;
-}
-
-.content[b-6ekk99mgqr]  li.highlight::before {
-    background-color: rgba(90, 192, 192, 0.5);
 }
 
 .content[b-6ekk99mgqr]  .heading-container {
