@@ -5,7 +5,21 @@
 
 <div class="page">
     <main>
-        <div class="top-row">
+        <div hidden="@(!hamburgerActive)" class="phone-menu-container">
+            @for (int i = 0; i < 4; i++)
+            {
+                int j = i; //help iterator
+                <a class="@((selectedPage==j) ? "active" : "")" @onclick="() => setSelectedPage(j)"
+                href="@paths[j]">@Loc[paths[j]]</a>
+            }
+        </div>
+
+        <div class="top-row @(hamburgerActive ? "active" : "")">
+            <div class="hamburger-container" @onclick="toggleHamburger">
+                <div></div>
+                <div class="middle"></div>
+                <div class="bottom"></div>
+            </div>
             @for (int i = 0; i < 4; i++)
             {
                 int j = i; //help iterator
@@ -36,6 +50,7 @@
 </div>
 @code {
     private int selectedPage = 0;
+    private bool hamburgerActive = false;
     private string? title;
     private string? currentUrl;
     private string[] paths = new[]
@@ -74,5 +89,10 @@
     {
         selectedPage = page;
         title = Loc[paths[selectedPage]];
+    }
+
+    private void toggleHamburger()
+    {
+        hamburgerActive = !hamburgerActive;
     }
 }

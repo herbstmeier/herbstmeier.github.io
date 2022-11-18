@@ -20,6 +20,7 @@ main {
     grid-template-columns: 1fr repeat(4, auto) 1fr;
     height: 10vh;
     font-size: 1rem;
+    transition: all 200ms ease-out;
 }
 
 .top-row::before {
@@ -31,6 +32,11 @@ main {
     background-color: rgb(90, 192, 192);
     z-index: -1;
     transform: skewY(2deg);
+    transition: inherit;
+}
+
+.top-row.active::before {
+    height: 75vh;
 }
 
 .top-row::after {
@@ -42,13 +48,21 @@ main {
     background-color: rgb(172 223 223);
     z-index: -1;
     transform: skewY(1deg);
+    transition: inherit;
+
 }
 
-.top-row ::deep a.active {
+.top-row.active::after {
+    height: 70vh;
+}
+
+.top-row ::deep a.active,
+.phone-menu-container a.active {
     border-bottom: solid 2px black;
 }
 
-.top-row ::deep a {
+.top-row ::deep a,
+.phone-menu-container ::deep a {
     white-space: nowrap;
     margin: 0 1rem;
     text-decoration: none;
@@ -57,19 +71,26 @@ main {
     cursor: pointer;
 }
 
-.top-row ::deep a:hover {
+.top-row ::deep a:hover,
+.phone-menu-container ::deep a:hover {
     text-shadow: 2px 2px rgb(90, 192, 192);
 }
 
 .top-row ::deep a:first-child {
     overflow: hidden;
     text-overflow: ellipsis;
-    grid-column-start: 2;
 }
 
 @media (max-width: 640.98px) {
     .top-row a {
         display: none;
+    }
+}
+
+@media (min-width: 640.98px) {
+    .top-row .hamburger-container {
+        opacity: 0;
+        pointer-events: none;
     }
 }
 
@@ -90,4 +111,37 @@ main {
 
 .body-container {
     width: 100%;
+}
+
+.hamburger-container {
+    justify-self: flex-start;
+    width: 3vh;
+    height: 2vh;
+    margin-left: 5vw;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: flex-start;
+    transition: all 200ms ease;
+}
+
+.hamburger-container > div {
+    border-top: 2px solid black;
+}
+
+.top-row.active .hamburger-container {
+    height: 3vh;
+}
+
+.phone-menu-container {
+    width: 100%;
+    z-index: 2;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20vh;
+    gap: 2rem;
+    font-size: 1.5rem;
 }
