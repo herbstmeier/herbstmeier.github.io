@@ -1,17 +1,17 @@
 @inject IStringLocalizer<Projects> Loc
 
 <div class="card-container">
-    <span class="title highlight">@project.title</span>
+    <span class="title highlight mtext">@project.title</span>
     <img src="@project.imagePath">
-    <p class="description">@project.description</p>
+    <p class="description stext">@project.description</p>
     <ul class="tags">
         @foreach (var tag in project.tags)
         {
-            <li class="highlight" @onclick="(args) => TagSelected(args, tag)">@tag</li>
+            <li class="stext highlight" @onclick="(args) => TagSelected(args, tag)">@tag</li>
         }
     </ul>
     <button>
-        <a href="projects/@project.url">@Loc["card-button"]</a>
+        <a class="mtext" href="projects/@project.url">@Loc["card-button"]</a>
     </button>
 </div>
 

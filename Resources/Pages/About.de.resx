@@ -126,15 +126,23 @@
     <comment/>
   </data>
   <data name="value-head" xml:space="preserve">
-    <value>wichtigsten werte:</value>
+    <value>kernwerte:</value>
     <comment/>
   </data>
   <data name="values" xml:space="preserve">
-    <value>gros stark schlua</value>
+    <value>authentizität kreativität güte</value>
     <comment/>
   </data>
   <data name="skill-head" xml:space="preserve">
     <value>meine fähigkeiten:</value>
+    <comment/>
+  </data>
+  <data name="cv1" xml:space="preserve">
+    <value>du suchst nach meinem </value>
+    <comment/>
+  </data>
+  <data name="cv2" xml:space="preserve">
+    <value>lebenslauf</value>
     <comment/>
   </data>
 </root>

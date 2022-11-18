@@ -5,11 +5,11 @@
 
 <div class="page">
     <main>
-        <div hidden="@(!hamburgerActive)" class="phone-menu-container">
+        <div class="phone-menu-container @(hamburgerActive ? "" : "hidden")">
             @for (int i = 0; i < 4; i++)
             {
                 int j = i; //help iterator
-                <a class="@((selectedPage==j) ? "active" : "")" @onclick="() => setSelectedPage(j)"
+                <a class="mtext @((selectedPage==j) ? "active" : "")" @onclick="() => setSelectedPage(j)"
                 href="@paths[j]">@Loc[paths[j]]</a>
             }
         </div>
@@ -23,7 +23,7 @@
             @for (int i = 0; i < 4; i++)
             {
                 int j = i; //help iterator
-                <a class="@((selectedPage==j) ? "active" : "")" @onclick="() => setSelectedPage(j)"
+                <a class="stext @((selectedPage==j) ? "active" : "")" @onclick="() => setSelectedPage(j)"
                 href="@paths[j]">@Loc[paths[j]]</a>
             }
             <CultureSelector />
@@ -33,12 +33,12 @@
             <div class="heading-container">
                 @if (selectedPage == 0)
                 {
-                    <h1>moritz</h1>
-                    <h1 class="last-name highlight">herbstmeier</h1>
+                    <h1 class="ltext">moritz</h1>
+                    <h1 class="last-name highlight ltext">herbstmeier</h1>
                 }
                 else
                 {
-                    <h1 class="highlight">@title</h1>
+                    <h1 class="highlight ltext">@title</h1>
                 }
 
             </div>
@@ -89,6 +89,7 @@
     {
         selectedPage = page;
         title = Loc[paths[selectedPage]];
+        hamburgerActive = false;
     }
 
     private void toggleHamburger()

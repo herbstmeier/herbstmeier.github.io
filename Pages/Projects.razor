@@ -4,11 +4,11 @@
 <PageTitle>moritz herbstmeier | @Loc["title"]</PageTitle>
 
 <div class="sort-container">
-    <p>@Loc["sort"]</p>
+    <p class="stext">@Loc["sort"]</p>
     <ul class="tags">
         @foreach (var tag in tags)
         {
-            <li class="highlight @(selectedTags.Contains(tag) ? "" : "sleep")" @onclick="() => toggleTag(tag)">@tag</li>
+            <li class="stext highlight @(selectedTags.Contains(tag) ? "" : "sleep")" @onclick="() => toggleTag(tag)">@tag</li>
         }
     </ul>
 

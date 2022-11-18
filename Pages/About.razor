@@ -3,32 +3,40 @@
 
 <PageTitle>moritz herbstmeier | @Loc["title"]</PageTitle>
 
+<div class="cv-container">
+    <h3 class="mtext">
+        @Loc["cv1"]
+        <a class="link" href="https://drive.google.com/file/d/1sog8_f_paOaMBmQlJ6s6tFDpoVC96FD-/view?usp=sharing" target="_blank" rel="noopener noreferrer">@Loc["cv2"]</a>?
+    </h3>
+</div>
+
 <div class="about-container">
     <div>
-        <img src="img/titled.png" alt="">
+        <img src="img/bewfoto2.jpg" alt="">
         <div class="value-container">
-            <span class="subhead">@Loc["value-head"]</span>
+            <span class="mtext">@Loc["value-head"]</span>
             <ul class="value-list">
                 @foreach (var value in values)
                 {
-                    <li>@value</li>
+                    <li class="stext">@value</li>
                 }
             </ul>
         </div>
     </div>
 
     <div>
-        <!--<p class="bio">@Loc["bio"]</p>-->
-        <p class="bio">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam velit ipsa sunt culpa voluptas
-            explicabo dignissimos adipisci omnis. Corporis similique asperiores consequatur quisquam ut maxime at
-            debitis
-            ullam commodi omnis.</p>
+        <!--<p class="bio stext">@Loc["bio"]</p>-->
+        <p class="bio stext">my biggest weakness is <b>overthinking</b>. but now that i wrote the first line the rest should come easily. :)<br>
+            i have always been a <b>creative</b> person. i started taking guitar lessons at age 9 and taught myself music production as a teen. 
+            bouldering is another creative outlet for me and offers a great sense of community among climbers.<br>
+            i am a lifelong learner, no matter the topic. though i espescially enjoy web development, embedded software development and electronic circuit design.<br>
+            i graduated from HAW Hamburg with a bacherlor's degree (b.sc.) in electrical and information engineering.</p>
         <div class="skills-container">
-            <span class="subhead">@Loc["skill-head"]</span>
+            <span class="mtext">@Loc["skill-head"]</span>
             <ul class="tags">
                 @foreach (var skill in skills)
                 {
-                    <li class="highlight">@skill</li>
+                    <li class="highlight stext">@skill</li>
                 }
             </ul>
         </div>
@@ -39,8 +47,7 @@
 
 @code {
     private string[] values = { "" };
-    private string[] skills = { "typescript","angular","html","css","sass", ".net" ,"blazor", "python" ,"vhdl" ,"arduino",
-"c" ,"c++" };
+    private string[] skills = { "TypeScript","Python","Java","C","C++","C#","Angular","HTML","CSS","Sass","ASP.NET","Blazor","SQL","VHDL","Arduino" };
 
     protected override void OnInitialized()
     {

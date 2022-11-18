@@ -121,12 +121,8 @@
     <value>about me</value>
     <comment/>
   </data>
-  <data name="bio" xml:space="preserve">
-    <value>i am big. i am strong. i am smart.</value>
-    <comment/>
-  </data>
   <data name="values" xml:space="preserve">
-    <value>big strong smart</value>
+    <value>authenticity creativity kindness</value>
     <comment/>
   </data>
   <data name="value-head" xml:space="preserve">
@@ -135,6 +131,14 @@
   </data>
   <data name="skill-head" xml:space="preserve">
     <value>my skills:</value>
+    <comment/>
+  </data>
+  <data name="cv1" xml:space="preserve">
+    <value>looking for my </value>
+    <comment/>
+  </data>
+  <data name="cv2" xml:space="preserve">
+    <value>cv</value>
     <comment/>
   </data>
 </root>
