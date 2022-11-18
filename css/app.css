@@ -26,13 +26,12 @@ button {
     width: fit-content;
     margin: auto;
     padding: 0 1rem;
-    background-color: rgb(255 134 95 / 90%);
     border: 0.1rem solid black;
     font-size: 1.5rem;
 }
 
 button:hover {
-    text-shadow: 1px 1px rgba(255, 255, 255, 0.5);
+    background-color: rgb(255 134 95 / 50%);
 }
 
 .tags {
@@ -45,7 +44,7 @@ button:hover {
 }
 
 .content {
-    padding: 17vh 5vh 10vh 5vh;
+    padding: 17vh 5vw 10vh 5vw;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -68,6 +67,7 @@ button:hover {
 
 li.highlight {
     margin: 0.3rem;
+    text-shadow: 1px 1px white;
 }
 
 li.highlight::before {
