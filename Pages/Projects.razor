@@ -3,26 +3,118 @@
 
 <PageTitle>moritz herbstmeier | @Loc["title"]</PageTitle>
 
+<div class="sort-container">
+    <p>@Loc["sort"]</p>
+    <ul class="tags">
+        @foreach (var tag in tags)
+        {
+            <li class="highlight @(selectedTags.Contains(tag) ? "" : "sleep")" @onclick="() => toggleTag(tag)">@tag</li>
+        }
+    </ul>
+
+</div>
+
 <div class="project-container">
-    @foreach (var project in projects)
+    @foreach (var project in visibleProjects)
     {
-        <ProjectCard project="@project"></ProjectCard>
+        <ProjectCard project="@project" OnTagSelected="toggleTag"></ProjectCard>
     }
 </div>
 
 @code {
-    private Project[] projects = new List<Project>().ToArray();
+    private List<Project> projects = new List<Project>();
+    private List<Project> visibleProjects = new List<Project>();
+    private List<String> tags = new List<String>();
+    private List<String> selectedTags = new List<String>();
 
     protected override void OnInitialized()
     {
-        addProject(Loc["alarm-title"], Loc["alarm-description"], "img/projects/9Mkg.gif", new String[2] { "birb", "wow" }, "birb");
-        addProject(Loc["alarm-title"], Loc["alarm-description"], "img/projects/9Mkg.gif", new String[2] { "birb", "wow" }, "birb");
-        addProject(Loc["alarm-title"], Loc["alarm-description"], "img/projects/9Mkg.gif", new String[2] { "birb", "wow" }, "birb");
-        addProject(Loc["alarm-title"], Loc["alarm-description"], "img/projects/9Mkg.gif", new String[2] { "birb", "wow" }, "birb");
+        projects = projects.Append(
+        new Project(
+        Loc["alarm-title"],
+        Loc["alarm-description"],
+        "img/projects/9Mkg.gif",
+        new String[2] { "birb", "bruh" },
+        "birb"
+        )
+        ).ToList();
+
+        projects = projects.Append(
+        new Project(
+        Loc["alarm-title"],
+        Loc["alarm-description"],
+        "img/projects/9Mkg.gif",
+        new String[2] { "apple", "bruh" },
+        "birb"
+        )
+        ).ToList();
+
+        projects = projects.Append(
+        new Project(
+        Loc["alarm-title"],
+        Loc["alarm-description"],
+        "img/projects/9Mkg.gif",
+        new String[2] { "birb", "cow" },
+        "birb"
+        )
+        ).ToList();
+
+        projects = projects.Append(
+        new Project(
+        Loc["alarm-title"],
+        Loc["alarm-description"],
+        "img/projects/9Mkg.gif",
+        new String[2] { "potato", "bruh" },
+        "birb"
+        )
+        ).ToList();
+
+        foreach (var project in projects)
+        {
+            foreach (var tag in project.tags)
+            {
+                if (!tags.Contains(tag))
+                {
+                    tags = tags.Append(tag).ToList();
+                }
+            }
+        }
+
+        visibleProjects = new List<Project>();
+        visibleProjects = projects;
     }
 
-    public void addProject(string title, string description, string imagePath, string[] tags, string url)
+    public void toggleTag(string tag) {
+        if (selectedTags.Contains(tag))
+        {
+            selectedTags.Remove(tag);
+        } else
+        {
+            selectedTags.Insert(0, tag);
+        }
+        sortByTags(selectedTags);
+    }
+
+    private void sortByTags(List<String> tags)
     {
-        projects = projects.Append(new Project(title, description, imagePath, tags, url)).ToArray();
+        visibleProjects = new List<Project>();
+
+        if (tags.Any() == false)
+        {
+            visibleProjects = projects;
+        }
+        else
+        {
+            foreach (var project in projects)
+            {
+                foreach (var tag in tags)
+                {
+                    if (project.tags.Contains(tag) && !visibleProjects.Contains(project))
+                    {
+                        visibleProjects.Insert(0, project);
+                    }
+                }
+            }
+        }
     }
 }

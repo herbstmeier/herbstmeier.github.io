@@ -1,20 +1,28 @@
 @inject IStringLocalizer<Projects> Loc
 
 <div class="card-container">
-    <span class="title">@project.title</span>
+    <span class="title highlight">@project.title</span>
     <img src="@project.imagePath">
     <p class="description">@project.description</p>
     <ul class="tags">
         @foreach (var tag in project.tags)
         {
-            <li class="highlight">@tag</li>
+            <li class="highlight" @onclick="(args) => TagSelected(args, tag)">@tag</li>
         }
     </ul>
-    <button></button>
+    <button>
+        <a href="projects/@project.url">@Loc["card-button"]</a>
+    </button>
 </div>
 
 @code {
     [Parameter]
-    public Project project { get; set; } = new Project("","","",new List<string>().ToArray(), "");
+    public Project project { get; set; } = new Project("", "", "", new List<string>().ToArray(), "");
+    [Parameter]
+    public EventCallback<string> OnTagSelected { get; set; }
 
+    private async Task TagSelected(MouseEventArgs e, string name)
+    {
+        await OnTagSelected.InvokeAsync(name);
+    }
 }

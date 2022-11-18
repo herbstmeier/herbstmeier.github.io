@@ -133,4 +133,8 @@
     <value>more</value>
     <comment/>
   </data>
+  <data name="sort" xml:space="preserve">
+    <value>sort by tags:</value>
+    <comment/>
+  </data>
 </root>

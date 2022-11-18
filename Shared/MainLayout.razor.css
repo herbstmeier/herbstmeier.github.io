@@ -3,7 +3,7 @@
     display: flex;
     font-family: Sono;
     overflow: hidden;
-}    
+}
 
 main {
     flex: 1;
@@ -28,77 +28,66 @@ main {
     top: -5vh;
     height: 20vh;
     width: 100%;
-    background-color: rgb(172 223 223);
-    border-bottom: 0.5rem solid rgb(90, 192, 192);
+    background-color: rgb(90, 192, 192);
     z-index: -1;
     transform: skewY(2deg);
 }
 
-    .top-row ::deep a.active {
-        border-bottom: solid 2px black;
-    }
+.top-row::after {
+    content: "";
+    position: absolute;
+    top: -5vh;
+    height: 16vh;
+    width: 100%;
+    background-color: rgb(172 223 223);
+    z-index: -1;
+    transform: skewY(1deg);
+}
 
-    .top-row ::deep a, .top-row ::deep .btn-link {
-        white-space: nowrap;
-        margin: 0 1rem;
-        text-decoration: none;
-        color: unset;
-        font-weight: bold;
-        cursor: pointer;
-    }
+.top-row ::deep a.active {
+    border-bottom: solid 2px black;
+}
 
-    .top-row ::deep a:hover, .top-row ::deep .btn-link:hover {
-        text-shadow: 2px 2px rgb(90, 192, 192);
-    }
+.top-row ::deep a {
+    white-space: nowrap;
+    margin: 0 1rem;
+    text-decoration: none;
+    color: unset;
+    font-weight: bold;
+    cursor: pointer;
+}
 
-    .top-row ::deep a:first-child {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        grid-column-start: 2;
-    }
+.top-row ::deep a:hover {
+    text-shadow: 2px 2px rgb(90, 192, 192);
+}
+
+.top-row ::deep a:first-child {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    grid-column-start: 2;
+}
 
 @media (max-width: 640.98px) {
-    .top-row:not(.auth) {
+    .top-row a {
         display: none;
-    }
-
-    .top-row.auth {
-        justify-content: space-between;
-    }
-
-    .top-row ::deep a, .top-row ::deep .btn-link {
-        margin-left: 0;
     }
 }
 
-@media (min-width: 641px) {
-    .page {
-        flex-direction: row;
-    }
+.page {
+    flex-direction: row;
+}
 
-    .sidebar {
-        width: 250px;
-        height: 100vh;
-        position: sticky;
-        top: 0;
-    }
-
-    .top-row {
-        position: fixed;
-        top: 0;
-        z-index: 1;
-        width: 100%;
-    }
-
-    .top-row.auth ::deep a:first-child {
-        flex: 1;
-        text-align: right;
-        width: 0;
-    }
+.top-row {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
 }
 
 .content ::deep .heading-container {
     width: fit-content;
-    border-radius: 1rem;
-    margin-bottom: 2rem;
+}
+
+.body-container {
+    width: 100%;
 }

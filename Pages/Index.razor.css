@@ -1,6 +1,7 @@
 .index-container {
     display: flex;
     white-space: pre-line;
+    margin-top: 2rem;
 }
 
 .pitch {
@@ -14,9 +15,10 @@
 
 .email-container {
     display: flex;
+    flex-wrap: wrap;
 }
 
-.email-container p {
+.email-container span {
     margin-right: 1rem;
 }
 

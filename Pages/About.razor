@@ -5,10 +5,8 @@
 
 <div class="center-container">
     <div class="about-container">
-        <div class="bio-container">
-            <img src="img/titled.png" alt="">
-            <p class="bio">@Loc["bio"]</p>
-        </div>
+        <img src="img/titled.png" alt="">
+        <p class="bio">@Loc["bio"]</p>
 
         <div class="value-container">
             <span class="subhead">@Loc["value-head"]</span>
@@ -22,7 +20,7 @@
 
         <div class="skills-container">
             <span class="subhead">@Loc["skill-head"]</span>
-            <ul class="skill-list">
+            <ul class="tags">
                 @foreach (var skill in skills)
                 {
                     <li class="highlight">@skill</li>

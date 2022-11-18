@@ -133,4 +133,8 @@
     <value>ein wecker, der durch langsames aufhellen seiner led-lampe ein sanftes aufwachen ermöglicht.</value>
     <comment/>
   </data>
+  <data name="sort" xml:space="preserve">
+    <value>nach tags sortieren:</value>
+    <comment/>
+  </data>
 </root>

@@ -1,13 +1,31 @@
 .card-container {
-    width: 20rem;
+    max-width: 25rem;
     height: fit-content;
     display: flex;
     flex-direction: column;
     gap: 1rem;
     border: solid 0.1rem black;
-    padding: 2rem;
+    padding: 1rem;
 }
 
 .title {
     font-size: 1.5rem;
+    width: fit-content;
+}
+
+img {
+    
+}
+
+button a {
+    color: black;
+    text-decoration: none;
+}
+
+.description {
+    margin: 0;
+}
+
+.tags {
+    margin: 0;
 }

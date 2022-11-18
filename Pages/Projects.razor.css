@@ -1,7 +1,22 @@
 .project-container {
-    width: fit-content;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
     justify-content: center;
+    align-items: center;
+}
+
+.sort-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sort-container p {
+    margin: 0;
+}
+
+li.highlight.sleep::before {
+    background-color: rgba(128, 128, 128, 0.3);
 }
