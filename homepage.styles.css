@@ -41,6 +41,10 @@
     display: flex;
     flex-wrap: wrap;
 }
+
+.email-container span[b-7964zury9s] {
+    margin-right: 1rem;
+}
 /* /Pages/ProjectCard.razor.rz.scp.css */
 .card-container[b-t5v59s5zs5] {
     max-width: 24rem;
@@ -129,7 +133,7 @@ main[b-6ekk99mgqr] {
 
 .top-row[b-6ekk99mgqr]  a.active,
 .phone-menu-container a.active[b-6ekk99mgqr] {
-    border-bottom: solid 2px black;
+    text-decoration: solid black underline;
 }
 
 .top-row[b-6ekk99mgqr]  a,
@@ -138,7 +142,6 @@ main[b-6ekk99mgqr] {
     margin: 0 1rem;
     text-decoration: none;
     color: unset;
-    font-weight: bold;
     cursor: pointer;
 }
 
@@ -181,29 +184,43 @@ main[b-6ekk99mgqr] {
 
 .hamburger-container[b-6ekk99mgqr] {
     justify-self: flex-start;
-    width: 3vh;
-    height: 2vh;
+    width: 6vh;
+    height: 6vh;
     margin-left: 5vw;
     cursor: pointer;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-content: flex-start;
     transition: all 200ms ease-out;
+    padding: 2vh 2vh 2vh 0;
 }
 
 .hamburger-container > div[b-6ekk99mgqr] {
-    border-top: 2px solid black;
+    height: 3px;
+    background-color: black;
+    border-radius: 2px;
 }
 
 .top-row.active .hamburger-container[b-6ekk99mgqr] {
-    height: 3vh;
+    padding: 0 2vh 0 0;
+}
+
+.hamburger-container .middle[b-6ekk99mgqr],
+.hamburger-container .bottom[b-6ekk99mgqr] {
+    position: relative;
+    width: 50%;
+    transition: inherit;
+}
+
+.top-row.active .hamburger-container .bottom[b-6ekk99mgqr] {
+    width: 100%;
 }
 
 .phone-menu-container[b-6ekk99mgqr] {
     width: 100%;
     z-index: 2;
-    position: absolute;
+    position: fixed;
     display: flex;
     flex-direction: column;
     align-items: center;
