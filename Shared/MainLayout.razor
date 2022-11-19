@@ -6,11 +6,10 @@
 <div class="page">
     <main>
         <div class="phone-menu-container @(hamburgerActive ? "" : "hidden")">
-            @for (int i = 0; i < 4; i++)
+            @foreach (var path in paths)
             {
-                int j = i; //help iterator
-                <a class="mtext @((selectedPage==j) ? "active" : "")" @onclick="() => setSelectedPage(j)"
-                href="@paths[j]">@Loc[paths[j]]</a>
+                <a class="mtext @((selectedPage==path) ? "active" : "")" @onclick="() => setSelectedPage(path)"
+                href="@path">@Loc[path]</a>
             }
         </div>
 
@@ -20,25 +19,24 @@
                 <div class="middle"></div>
                 <div class="bottom"></div>
             </div>
-            @for (int i = 0; i < 4; i++)
+            @foreach (var path in paths)
             {
-                int j = i; //help iterator
-                <a class="stext @((selectedPage==j) ? "active" : "")" @onclick="() => setSelectedPage(j)"
-                href="@paths[j]">@Loc[paths[j]]</a>
+                <a class="mtext @((selectedPage==path) ? "active" : "")" @onclick="() => setSelectedPage(path)"
+                href="@path">@Loc[path]</a>
             }
             <CultureSelector />
         </div>
 
         <article class="content">
             <div class="heading-container">
-                @if (selectedPage == 0)
+                @if (selectedPage == "home")
                 {
                     <h1 class="ltext">moritz</h1>
                     <h1 class="last-name highlight ltext">herbstmeier</h1>
                 }
                 else
                 {
-                    <h1 class="highlight ltext">@title</h1>
+                    <h1 class="highlight ltext">@Loc[selectedPage]</h1>
                 }
 
             </div>
@@ -49,46 +47,25 @@
     </main>
 </div>
 @code {
-    private int selectedPage = 0;
+    private string selectedPage = String.Empty;
     private bool hamburgerActive = false;
-    private string? title;
-    private string? currentUrl;
     private string[] paths = new[]
     {
 "home",
 "about",
-"projects",
-"resume"
+"projects"
 };
 
     protected override void OnInitialized()
     {
+        string currentUrl;
         currentUrl = NavManager.ToBaseRelativePath(NavManager.Uri);
-        switch (currentUrl)
-        {
-            case "home":
-                selectedPage = 0;
-                break;
-            case "about":
-                selectedPage = 1;
-                break;
-            case "projects":
-                selectedPage = 2;
-                break;
-            case "resume":
-                selectedPage = 3;
-                break;
-        }
-
-        title = Loc[paths[selectedPage]];
+        setSelectedPage(currentUrl);
     }
 
-
-
-    public void setSelectedPage(int page)
+    public void setSelectedPage(string path)
     {
-        selectedPage = page;
-        title = Loc[paths[selectedPage]];
+        selectedPage = path;
         hamburgerActive = false;
     }
 

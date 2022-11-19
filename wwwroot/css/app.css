@@ -177,5 +177,5 @@ li.highlight::before {
 
 .top-row a:hover,
 .phone-menu-container a:hover {
-    text-shadow: 2px 2px var(--primary-dark);
+    text-shadow: 1px 1px var(--primary-dark);
 }
