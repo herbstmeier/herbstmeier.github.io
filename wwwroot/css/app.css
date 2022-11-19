@@ -76,6 +76,7 @@ button:hover {
 .highlight {
     text-shadow: 1px 1px white;
     position: relative;
+    width: fit-content;
 }
 
 h1.highlight {

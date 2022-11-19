@@ -1,4 +1,5 @@
 ﻿@page "/about"
+@using System.Globalization
 @inject IStringLocalizer<About> Loc
 
 <PageTitle>moritz herbstmeier | @Loc["title"]</PageTitle>
@@ -6,7 +7,8 @@
 <div class="cv-container">
     <h3 class="mtext">
         @Loc["cv1"]
-        <a class="link" href="https://drive.google.com/file/d/1sog8_f_paOaMBmQlJ6s6tFDpoVC96FD-/view?usp=sharing" target="_blank" rel="noopener noreferrer">@Loc["cv2"]</a>?
+        <a class="link" href="https://drive.google.com/file/d/1sog8_f_paOaMBmQlJ6s6tFDpoVC96FD-/view?usp=sharing"
+            target="_blank" rel="noopener noreferrer">@Loc["cv2"]</a>?
     </h3>
 </div>
 
@@ -25,13 +27,24 @@
     </div>
 
     <div>
-        <!--<p class="bio stext">@Loc["bio"]</p>-->
-        <p class="bio stext">my biggest weakness is <b>overthinking</b>. but now that i wrote the first line the rest should come easily. :)<br>
-            i have always been a <b>creative</b> person. i started taking guitar lessons at age 9 and taught myself music production as a teen. 
-            bouldering is another creative outlet for me and offers a great sense of community among climbers.<br>
-            i graduated from HAW Hamburg with a bacherlor's degree (b.sc.) in electrical and information engineering.
-            i am a lifelong learner, no matter the topic. though i espescially enjoy web development, embedded software development and electronic circuit design.<br>
+        @if (CultureInfo.CurrentCulture.TwoLetterISOLanguageName == "en")
+        {
+            <p class="bio stext">my biggest weakness is <b>overthinking</b>. but now that i wrote the first line the rest
+                should come easily. :)<br>
+                i have always been a <b>creative</b> person. i started taking guitar lessons at age 9 and taught myself
+                music production as a teen.
+                bouldering is another creative outlet for me and offers a great sense of community among climbers.<br>
+                i graduated from HAW Hamburg with a bacherlor's degree (b.sc.) in electrical and information engineering.
+                i am a lifelong learner, no matter the topic. though i espescially enjoy web development, embedded software
+                development and electronic circuit design.<br>
             </p>
+        }
+        else
+        {
+            <p class="bio stext">duetch<br>
+            </p>
+        }
+
         <div class="skills-container">
             <span class="mtext">@Loc["skill-head"]</span>
             <ul class="tags">
@@ -48,7 +61,8 @@
 
 @code {
     private string[] values = { "" };
-    private string[] skills = { "TypeScript","Python","Java","C","C++","C#","Angular","HTML","CSS","Sass","ASP.NET","Blazor","SQL","VHDL","Arduino" };
+    private string[] skills = {
+"TypeScript","Python","Java","C","C++","C#","Angular","HTML","CSS","Sass","ASP.NET","Blazor","SQL","VHDL","Arduino" };
 
     protected override void OnInitialized()
     {

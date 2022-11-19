@@ -55,17 +55,30 @@
 "about",
 "projects"
 };
-
-    protected override void OnInitialized()
+    protected override void OnParametersSet()
     {
         string currentUrl;
         currentUrl = NavManager.ToBaseRelativePath(NavManager.Uri);
+        if (currentUrl == "")
+        {
+            currentUrl = "home";
+            NavManager.NavigateTo(currentUrl);
+        }
         setSelectedPage(currentUrl);
+        base.OnParametersSet();
     }
 
     public void setSelectedPage(string path)
     {
-        selectedPage = path;
+        if (paths.Contains(path))
+        {
+            selectedPage = path;
+        }
+        else
+        {
+            selectedPage = "not found";
+        }
+
         hamburgerActive = false;
     }
 
