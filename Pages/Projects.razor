@@ -111,7 +111,7 @@
                 {
                     if (project.tags.Contains(tag) && !visibleProjects.Contains(project))
                     {
-                        visibleProjects.Insert(0, project);
+                        visibleProjects.Insert(visibleProjects.Count, project);
                     }
                 }
             }

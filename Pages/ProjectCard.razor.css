@@ -8,6 +8,10 @@
     padding: 1rem;
 }
 
+.card-container img {
+    max-width: 100%;
+}
+
 .title {
     width: fit-content;
 }

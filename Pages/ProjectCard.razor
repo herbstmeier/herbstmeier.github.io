@@ -1,4 +1,5 @@
 @inject IStringLocalizer<Projects> Loc
+@inject NavigationManager NavManager
 
 <div class="card-container">
     <span class="title highlight mtext">@project.title</span>
@@ -10,9 +11,7 @@
             <li class="stext highlight" @onclick="(args) => TagSelected(args, tag)">@tag</li>
         }
     </ul>
-    <button>
-        <a class="mtext" href="projects/@project.url">@Loc["card-button"]</a>
-    </button>
+    <button class="mtext" @onclick="()=>NavToProject(project.url)">@Loc["card-button"]</button>
 </div>
 
 @code {
@@ -24,5 +23,10 @@
     private async Task TagSelected(MouseEventArgs e, string name)
     {
         await OnTagSelected.InvokeAsync(name);
+    }
+
+    private void NavToProject(string path)
+    {
+        NavManager.NavigateTo("projects/" + path);
     }
 }
