@@ -27,6 +27,16 @@
     </div>
 
     <div>
+        <div class="skills-container">
+            <span class="mtext">@Loc["skill-head"]</span>
+            <ul class="tags">
+                @foreach (var skill in skills)
+                {
+                    <li class="highlight stext">@skill</li>
+                }
+            </ul>
+        </div>
+
         @if (CultureInfo.CurrentCulture.TwoLetterISOLanguageName == "en")
         {
             <p class="bio stext">my biggest weakness is <b>overthinking</b>. but now that i wrote the first line the rest
@@ -44,16 +54,6 @@
             <p class="bio stext">duetch<br>
             </p>
         }
-
-        <div class="skills-container">
-            <span class="mtext">@Loc["skill-head"]</span>
-            <ul class="tags">
-                @foreach (var skill in skills)
-                {
-                    <li class="highlight stext">@skill</li>
-                }
-            </ul>
-        </div>
     </div>
 
 
@@ -62,7 +62,7 @@
 @code {
     private string[] values = { "" };
     private string[] skills = {
-"TypeScript","Python","Java","C","C++","C#","Angular","HTML","CSS","Sass","ASP.NET","Blazor","SQL","VHDL","Arduino" };
+"TypeScript","C++","C#","Angular","HTML","CSS","Sass","ASP.NET","Blazor","SQL","VHDL","Arduino" };
 
     protected override void OnInitialized()
     {

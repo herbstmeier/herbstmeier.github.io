@@ -5,13 +5,21 @@
     --primary-light: #acdfdf;
     --secondary: #ffc2ae;
 
-    --large: 3rem;
+    --large: 4rem;
     --medium: 1.5rem;
     --small: 1rem;
 }
 
-.ltext {
-    font-size: var(--large);
+@media (max-width: 640.98px) {
+    .ltext {
+        font-size: 12vw;
+    }
+}
+
+@media (min-width: 640.98px) {
+    .ltext {
+        font-size: var(--large);
+    }
 }
 
 .mtext {

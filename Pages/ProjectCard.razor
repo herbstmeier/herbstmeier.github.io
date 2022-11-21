@@ -2,9 +2,9 @@
 @inject NavigationManager NavManager
 
 <div class="card-container">
-    <span class="title highlight mtext">@project.title</span>
+    <span class="title highlight mtext">@Loc[project.title]</span>
     <img src="@project.imagePath">
-    <p class="description stext">@project.description</p>
+    <p class="description stext">@Loc[project.description]</p>
     <ul class="tags">
         @foreach (var tag in project.tags)
         {

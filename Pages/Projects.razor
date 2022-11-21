@@ -29,56 +29,8 @@
 
     protected override void OnInitialized()
     {
-        projects = projects.Append(
-        new Project(
-        Loc["alarm-title"],
-        Loc["alarm-description"],
-        "img/projects/9Mkg.gif",
-        new String[2] { "birb", "bruh" },
-        "birb"
-        )
-        ).ToList();
-
-        projects = projects.Append(
-        new Project(
-        Loc["alarm-title"],
-        Loc["alarm-description"],
-        "img/projects/9Mkg.gif",
-        new String[2] { "apple", "bruh" },
-        "birb"
-        )
-        ).ToList();
-
-        projects = projects.Append(
-        new Project(
-        Loc["alarm-title"],
-        Loc["alarm-description"],
-        "img/projects/9Mkg.gif",
-        new String[2] { "birb", "cow" },
-        "birb"
-        )
-        ).ToList();
-
-        projects = projects.Append(
-        new Project(
-        Loc["alarm-title"],
-        Loc["alarm-description"],
-        "img/projects/9Mkg.gif",
-        new String[2] { "potato", "bruh" },
-        "birb"
-        )
-        ).ToList();
-
-        foreach (var project in projects)
-        {
-            foreach (var tag in project.tags)
-            {
-                if (!tags.Contains(tag))
-                {
-                    tags = tags.Append(tag).ToList();
-                }
-            }
-        }
+        projects = ProjectData.GetProjects();
+        tags = Project.ExtractTags(projects);
 
         visibleProjects = new List<Project>();
         visibleProjects = projects;
@@ -92,29 +44,6 @@
         {
             selectedTags.Insert(0, tag);
         }
-        sortByTags(selectedTags);
-    }
-
-    private void sortByTags(List<String> tags)
-    {
-        visibleProjects = new List<Project>();
-
-        if (tags.Any() == false)
-        {
-            visibleProjects = projects;
-        }
-        else
-        {
-            foreach (var project in projects)
-            {
-                foreach (var tag in tags)
-                {
-                    if (project.tags.Contains(tag) && !visibleProjects.Contains(project))
-                    {
-                        visibleProjects.Insert(visibleProjects.Count, project);
-                    }
-                }
-            }
-        }
+        visibleProjects = Project.SortByTags(projects, selectedTags);
     }
 }
