@@ -1,4 +1,11 @@
-﻿@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
+﻿@font-face {
+    font-family: 'Sono';
+    src: url('../fonts/Sono-Regular.woff2') format('woff2'),
+        url('../fonts/Sono-Regular.woff') format('woff'),
+        url('../fonts/Sono-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 :root {
     --primary-dark: #5ac0c0;
