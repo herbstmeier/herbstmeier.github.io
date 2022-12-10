@@ -3,12 +3,17 @@
 
 <PageTitle>moritz herbstmeier | @Loc["title"]</PageTitle>
 
+<div class="heading-container">
+    <h1 class="highlight ltext">@Loc["title"]</h1>
+</div>
+
 <div class="sort-container">
     <p class="stext">@Loc["sort"]</p>
     <ul class="tags">
         @foreach (var tag in tags)
         {
-            <li class="stext highlight @(selectedTags.Contains(tag) ? "" : "sleep")" @onclick="() => toggleTag(tag)">@tag</li>
+            <li class="stext highlight @(selectedTags.Contains(tag) ? "" : "sleep")" @onclick="() => toggleTag(tag)">@tag
+            </li>
         }
     </ul>
 
@@ -36,11 +41,13 @@
         visibleProjects = projects;
     }
 
-    public void toggleTag(string tag) {
+    public void toggleTag(string tag)
+    {
         if (selectedTags.Contains(tag))
         {
             selectedTags.Remove(tag);
-        } else
+        }
+        else
         {
             selectedTags.Insert(0, tag);
         }

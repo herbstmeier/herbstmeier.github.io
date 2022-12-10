@@ -62,7 +62,7 @@ h1:focus {
 
 button {
     width: fit-content;
-    margin: auto;
+    margin: 0 auto;
     padding: 0 1rem;
     border: 0.1rem solid black;
     font-size: 1.5rem;

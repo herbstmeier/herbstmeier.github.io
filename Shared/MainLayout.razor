@@ -28,18 +28,6 @@
         </div>
 
         <article class="content">
-            <div class="heading-container">
-                @if (selectedPage == "home")
-                {
-                    <h1 class="ltext">moritz</h1>
-                    <h1 class="last-name highlight ltext">herbstmeier</h1>
-                }
-                else
-                {
-                    <h1 class="highlight ltext">@Loc[selectedPage]</h1>
-                }
-
-            </div>
             <div class="body-container">
                 @Body
             </div>
@@ -59,6 +47,10 @@
     {
         string currentUrl;
         currentUrl = NavManager.ToBaseRelativePath(NavManager.Uri);
+        if (currentUrl.Contains('/')) {
+            currentUrl = currentUrl.Substring(0, currentUrl.IndexOf('/'));
+        }
+
         if (currentUrl == "")
         {
             currentUrl = "home";
@@ -78,7 +70,6 @@
         {
             selectedPage = "not found";
         }
-
         hamburgerActive = false;
     }
 

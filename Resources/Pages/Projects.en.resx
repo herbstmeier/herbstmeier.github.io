@@ -137,4 +137,20 @@
     <value>looking for something specific?</value>
     <comment/>
   </data>
+  <data name="portfolio-title" xml:space="preserve">
+    <value>portfolio website</value>
+    <comment/>
+  </data>
+  <data name="portfolio-description" xml:space="preserve">
+    <value>it's the thing you're currently looking at. a personal website to present who i am and what i've done. </value>
+    <comment/>
+  </data>
+  <data name="redpoint-title" xml:space="preserve">
+    <value>RedPoint</value>
+    <comment/>
+  </data>
+  <data name="redpoint-description" xml:space="preserve">
+    <value>RedPoint is a fake bouldering gym. Their website includes interactive features from tracking your progress to rating the boulders.</value>
+    <comment/>
+  </data>
 </root>

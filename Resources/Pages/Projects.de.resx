@@ -137,4 +137,20 @@
     <value>du möchtest etwas bestimmtes finden?</value>
     <comment/>
   </data>
+  <data name="portfolio-title" xml:space="preserve">
+    <value>portfolio website</value>
+    <comment/>
+  </data>
+  <data name="portfolio-description" xml:space="preserve">
+    <value>diese aktuelle website. dient, um zu präsentieren, wer ich bin und was ich getan habe.</value>
+    <comment/>
+  </data>
+  <data name="redpoint-title" xml:space="preserve">
+    <value>RedPoint</value>
+    <comment/>
+  </data>
+  <data name="redpoint-description" xml:space="preserve">
+    <value>RedPoint ist ein fake bouldering gym. ihre website hat interaktive features. z.b. den eigenen fortschritt tracken oder die routen bewerten.</value>
+    <comment/>
+  </data>
 </root>

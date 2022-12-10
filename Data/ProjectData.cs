@@ -8,35 +8,27 @@ public static class ProjectData
 
         projects.Add(
         new Project(
-        "alarm-title",
-        "alarm-description",
-        "img/projects/9Mkg.gif",
-        new String[] { "birb", "bruh" },
-        "birb"));
+        "redpoint-title",
+        "redpoint-description",
+        "img/projects/redpoint.png",
+        new String[] { "Angular", "NodeJS", "MySQL", "Sass" },
+        "redpoint"));
+
+        projects.Add(
+        new Project(
+        "portfolio-title",
+        "portfolio-description",
+        "img/projects/portfolio.png",
+        new String[] { "Blazor", "CSS" },
+        "portfolio"));
 
         projects.Add(
         new Project(
         "alarm-title",
         "alarm-description",
-        "img/projects/9Mkg.gif",
-        new String[] { "apple", "bruh" },
-        "birb"));
-
-        projects.Add(
-        new Project(
-        "alarm-title",
-        "alarm-description",
-        "img/projects/9Mkg.gif",
-        new String[] { "birb", "cow" },
-        "birb"));
-
-        projects.Add(
-        new Project(
-        "alarm-title",
-        "alarm-description",
-        "img/projects/9Mkg.gif",
-        new String[] { "potato", "bruh" },
-        "birb"));
+        "img/projects/alarm.png",
+        new String[] { "Embedded", "Arduino", "C++", "Circuit Design" },
+        "alarm"));
 
         return projects;
     }
