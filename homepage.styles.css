@@ -47,17 +47,20 @@
 }
 /* /Pages/ProjectCard.razor.rz.scp.css */
 .card-container[b-t5v59s5zs5] {
+    position: relative;
     max-width: 24rem;
-    height: fit-content;
+    height: 34rem;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
     border: solid 0.1rem black;
     padding: 1rem;
+    justify-content: space-between;
 }
 
 .card-container img[b-t5v59s5zs5] {
     max-width: 100%;
+    object-fit: cover;
+    height: 40%;
 }
 
 .title[b-t5v59s5zs5] {
@@ -75,6 +78,22 @@ a[b-t5v59s5zs5] {
 
 .tags[b-t5v59s5zs5] {
     margin: 0;
+}
+
+.card-container.wip *[b-t5v59s5zs5] {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.card-container.wip[b-t5v59s5zs5]::before {
+    content: 'work in progress';
+    position: absolute;
+    z-index: 0;
+    font-size: 4rem;
+    font-weight: bold;
+    transform: rotate(350deg);
+    top: 10%;
+    left: 10%;
 }
 /* /Pages/Projects.razor.rz.scp.css */
 .project-container[b-nuzfv5cohf] {
