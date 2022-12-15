@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "H4bNSXFkwGgZFT7h48kZyX+kv5EPMr838V1Pn0jVTT7cG01QV8pBzYjtVpePSlnND9R9F5SHnWLEXsH1kcGqIg==",
+  "dgSpecHash": "n2ofsmNJorJWqOJYeh3q6SaCMu9sFRQGAzT1yAeUdLlB6fpQswpuPJ/7b4gmJk3ljFG6N2uk2ykzZ6rHB7rVYg==",
   "success": true,
-  "projectFilePath": "S:\\Documents\\Programs\\homepage\\homepage.csproj",
+  "projectFilePath": "s:\\Documents\\Programs\\homepage\\homepage.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Moritz\\.nuget\\packages\\blazorwasmantivirusprotection\\2.4.0\\blazorwasmantivirusprotection.2.4.0.nupkg.sha512",
     "C:\\Users\\Moritz\\.nuget\\packages\\microsoft.aspnetcore.authorization\\6.0.10\\microsoft.aspnetcore.authorization.6.0.10.nupkg.sha512",
     "C:\\Users\\Moritz\\.nuget\\packages\\microsoft.aspnetcore.components\\6.0.10\\microsoft.aspnetcore.components.6.0.10.nupkg.sha512",
     "C:\\Users\\Moritz\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\6.0.10\\microsoft.aspnetcore.components.analyzers.6.0.10.nupkg.sha512",

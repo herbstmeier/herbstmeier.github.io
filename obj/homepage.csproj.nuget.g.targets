@@ -4,5 +4,6 @@
     <Import Project="$(NuGetPackageRoot)microsoft.extensions.logging.abstractions\6.0.3\buildTransitive\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.extensions.logging.abstractions\6.0.3\buildTransitive\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.targets')" />
     <Import Project="$(NuGetPackageRoot)microsoft.aspnetcore.components.webassembly.devserver\6.0.10\build\Microsoft.AspNetCore.Components.WebAssembly.DevServer.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.aspnetcore.components.webassembly.devserver\6.0.10\build\Microsoft.AspNetCore.Components.WebAssembly.DevServer.targets')" />
     <Import Project="$(NuGetPackageRoot)microsoft.aspnetcore.components.analyzers\6.0.10\buildTransitive\netstandard2.0\Microsoft.AspNetCore.Components.Analyzers.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.aspnetcore.components.analyzers\6.0.10\buildTransitive\netstandard2.0\Microsoft.AspNetCore.Components.Analyzers.targets')" />
+    <Import Project="$(NuGetPackageRoot)blazorwasmantivirusprotection\2.4.0\build\net6.0\BlazorWasmAntivirusProtection.targets" Condition="Exists('$(NuGetPackageRoot)blazorwasmantivirusprotection\2.4.0\build\net6.0\BlazorWasmAntivirusProtection.targets')" />
   </ImportGroup>
 </Project>

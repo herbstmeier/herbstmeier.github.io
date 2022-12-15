@@ -15,8 +15,10 @@
   </ItemGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <Import Project="$(NuGetPackageRoot)microsoft.aspnetcore.components.webassembly\6.0.10\build\net6.0\Microsoft.AspNetCore.Components.WebAssembly.props" Condition="Exists('$(NuGetPackageRoot)microsoft.aspnetcore.components.webassembly\6.0.10\build\net6.0\Microsoft.AspNetCore.Components.WebAssembly.props')" />
+    <Import Project="$(NuGetPackageRoot)blazorwasmantivirusprotection\2.4.0\buildTransitive\BlazorWasmAntivirusProtection.props" Condition="Exists('$(NuGetPackageRoot)blazorwasmantivirusprotection\2.4.0\buildTransitive\BlazorWasmAntivirusProtection.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgMicrosoft_AspNetCore_Components_WebAssembly_DevServer Condition=" '$(PkgMicrosoft_AspNetCore_Components_WebAssembly_DevServer)' == '' ">C:\Users\Moritz\.nuget\packages\microsoft.aspnetcore.components.webassembly.devserver\6.0.10</PkgMicrosoft_AspNetCore_Components_WebAssembly_DevServer>
+    <PkgBlazorWasmAntivirusProtection Condition=" '$(PkgBlazorWasmAntivirusProtection)' == '' ">C:\Users\Moritz\.nuget\packages\blazorwasmantivirusprotection\2.4.0</PkgBlazorWasmAntivirusProtection>
   </PropertyGroup>
 </Project>
