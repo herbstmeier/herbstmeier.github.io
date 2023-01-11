@@ -7,7 +7,7 @@
   "linkerEnabled": true,
   "resources": {
     "assembly": {
-      "homepage.bin": "sha256-tDTx8TISNYBjC9CcUtlptRRSv+GK+K8ViCs2e00hCYE=",
+      "homepage.bin": "sha256-Vg9xuOgchmpFSATE3rc416Qa1Y31phK7q+fE5OryuVU=",
       "Microsoft.AspNetCore.Components.bin": "sha256-5e9Huq+Xp83zwB0psVxH+SoTm4ItxDIdIg62rSVlzeI=",
       "Microsoft.AspNetCore.Components.Web.bin": "sha256-lxTOzhK4cSMldDj9kxQykCN6uUPBYJ+QX9Rh+wvuB7g=",
       "Microsoft.AspNetCore.Components.WebAssembly.bin": "sha256-aGfncPsSqEyoKRatCWdsnUkiv0c+ODA36034XYmliIc=",
@@ -60,10 +60,10 @@
     },
     "satelliteResources": {
       "de": {
-        "de\/homepage.resources.bin": "sha256-59f1KuVl3ex7A0t1pP4MLRO7JMikiwuuNwESpGjfrgM="
+        "de\/homepage.resources.bin": "sha256-zBGUFnRS2+Gv0aTgN4p\/z0kMh+KacgWJi1SyJLzguYg="
       },
       "en": {
-        "en\/homepage.resources.bin": "sha256-mLLlnSJzFK3OrtLxSWAtwVnVXOMIv6NLmCYmyaVYaLM="
+        "en\/homepage.resources.bin": "sha256-h6PVeSCDFi8mjhFNdeTbIuEy0t60Zxi6wq5WCKy\/PRI="
       }
     }
   }

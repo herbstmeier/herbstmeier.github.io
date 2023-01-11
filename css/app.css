@@ -15,6 +15,7 @@
     --large: 4rem;
     --medium: 1.5rem;
     --small: 1rem;
+    --xsmall: 0.8rem;
 }
 
 @media (max-width: 640.98px) {
@@ -112,6 +113,30 @@ h1.highlight {
     margin: 0.3rem;
 }
 
+.en div:not(.sort-container) .tags li:hover::after {
+    content: 'view projects';
+}
+
+.de div:not(.sort-container) .tags li:hover::after {
+    content: 'projekte anzeigen';
+}
+
+.github:hover::after {
+    content: 'github repository';
+}
+
+.hover-box::after {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.8);
+    top: -110%;
+    left: 50%;
+    border: 1px solid black;
+    font-size: var(--xsmall);
+    width: max-content;
+    padding: 0 5px;
+    transform: translateX(-50%);
+}
+
 li.highlight::before {
     background-color: var(--primary-light);
 }
@@ -194,4 +219,16 @@ li.highlight::before {
 .top-row a:hover,
 .phone-menu-container a:hover {
     text-shadow: 1px 1px var(--primary-dark);
+}
+
+.link-container a {
+    position: relative;
+    text-decoration: none;
+    color: black;
+}
+
+.icon {
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
 }
