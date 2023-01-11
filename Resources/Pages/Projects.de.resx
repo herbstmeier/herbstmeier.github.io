@@ -145,12 +145,12 @@
     <value>diese aktuelle website. dient, um zu präsentieren, wer ich bin und was ich getan habe.</value>
     <comment/>
   </data>
-  <data name="redpoint-title" xml:space="preserve">
-    <value>RedPoint</value>
-    <comment/>
-  </data>
   <data name="redpoint-description" xml:space="preserve">
     <value>RedPoint ist ein fake bouldering gym. ihre website hat interaktive features. z.b. den eigenen fortschritt tracken oder die routen bewerten.</value>
+    <comment/>
+  </data>
+  <data name="bimeshof-description" xml:space="preserve">
+    <value>ich habe die website für einen hof in meiner heimat gestaltet und gebaut.</value>
     <comment/>
   </data>
 </root>

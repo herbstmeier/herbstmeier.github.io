@@ -28,7 +28,7 @@
         </div>
 
         <article class="content">
-            <div class="body-container">
+            <div class="body-container @Culture.TwoLetterISOLanguageName">
                 @Body
             </div>
         </article>
@@ -43,11 +43,17 @@
 "about",
 "projects"
 };
+
+    private CultureInfo Culture
+    {
+        get => CultureInfo.CurrentCulture;
+    }
     protected override void OnParametersSet()
     {
         string currentUrl;
         currentUrl = NavManager.ToBaseRelativePath(NavManager.Uri);
-        if (currentUrl.Contains('/')) {
+        if (currentUrl.Contains('/'))
+        {
             currentUrl = currentUrl.Substring(0, currentUrl.IndexOf('/'));
         }
 

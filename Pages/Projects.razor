@@ -1,4 +1,5 @@
 ﻿@page "/projects"
+@page "/projects/{tagId:int}"
 @inject IStringLocalizer<Projects> Loc
 
 <PageTitle>moritz herbstmeier | @Loc["title"]</PageTitle>
@@ -12,7 +13,7 @@
     <ul class="tags">
         @foreach (var tag in tags)
         {
-            <li class="stext highlight @(selectedTags.Contains(tag) ? "" : "sleep")" @onclick="() => toggleTag(tag)">@tag
+            <li class="stext highlight hover-box @(selectedTags.Contains(tag) ? "" : "sleep")" @onclick="() => toggleTag(tag)">@tag
             </li>
         }
     </ul>
@@ -27,6 +28,8 @@
 </div>
 
 @code {
+    [Parameter]
+    public int? tagId { get; set; }
     private List<Project> projects = new List<Project>();
     private List<Project> visibleProjects = new List<Project>();
     private List<String> tags = new List<String>();
@@ -39,6 +42,12 @@
 
         visibleProjects = new List<Project>();
         visibleProjects = projects;
+
+        if (tagId.HasValue)
+        {
+            int id = tagId ?? default(int);
+            toggleTag(tags[id]);
+        }
     }
 
     public void toggleTag(string tag)

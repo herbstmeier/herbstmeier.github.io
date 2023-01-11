@@ -1,6 +1,7 @@
 ﻿@page "/about"
 @using System.Globalization
 @inject IStringLocalizer<About> Loc
+@inject NavigationManager NavManager
 
 <PageTitle>moritz herbstmeier | @Loc["title"]</PageTitle>
 
@@ -36,7 +37,7 @@
             <ul class="tags">
                 @foreach (var skill in skills)
                 {
-                    <li class="highlight stext">@skill</li>
+                    <li class="highlight stext hover-box" @onclick="()=>NavToTag(skill)">@skill</li>
                 }
             </ul>
         </div>
@@ -58,11 +59,15 @@
         else
         {
             <p class="bio stext">
-                ich habe an der HAW Hamburg mein bachelorstudium in <b>elektrotechnik und informationstechnik</b> abgeschlossen.
-                neues zu lernen ist für mich extrem wichtig, egal welches thema. besonders gerne vertiefe ich mein wissen in der
-                <b>web-entwicklung</b>, <b>embedded-software-entwicklung</b> und dem <b>entwurf von elektronischen schaltungen</b>.
-                ich war schon immer eine <b>kreative</b> person. mit 9 habe ich mit gitarrenunterricht begonnen und als teenager
-                 habe ich mir musikproduktion beigebracht.
+                ich habe an der HAW Hamburg mein bachelorstudium in <b>elektrotechnik und informationstechnik</b>
+                abgeschlossen.
+                neues zu lernen ist für mich extrem wichtig, egal welches thema. besonders gerne vertiefe ich mein wissen in
+                der
+                <b>web-entwicklung</b>, <b>embedded-software-entwicklung</b> und dem <b>entwurf von elektronischen
+                    schaltungen</b>.<br>
+                ich war schon immer eine <b>kreative</b> person. mit 9 jahren habe ich begonnen, gitarrenunterricht zu nehmen und als
+                teenager
+                habe ich mir musikproduktion beigebracht.
                 <b>bouldern</b> ist eine leidenschaft für mich und bietet ein starkes gemeinschaftsgefühl unter kletterern.
             </p>
         }
@@ -73,11 +78,16 @@
 
 @code {
     private string[] values = { "" };
-    private string[] skills = {
-"TypeScript","C++","C#","Angular","HTML","CSS","Sass","ASP.NET","Blazor","SQL","VHDL","Arduino" };
+    private List<string> skills = Project.ExtractTags(ProjectData.GetProjects());
+    //{"TypeScript","C++","C#","Angular","HTML","CSS","Sass","ASP.NET","Blazor","SQL","VHDL","Arduino" };
 
     protected override void OnInitialized()
     {
         values = Loc["values"].ToString().Split(" ");
+    }
+
+    private void NavToTag(string tag)
+    {
+        NavManager.NavigateTo("projects/" + skills.IndexOf(tag));
     }
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "n2ofsmNJorJWqOJYeh3q6SaCMu9sFRQGAzT1yAeUdLlB6fpQswpuPJ/7b4gmJk3ljFG6N2uk2ykzZ6rHB7rVYg==",
+  "dgSpecHash": "VjfF2WTstbK+OdvEQn/vvmb2mS3qhkDRFgq9CrzgMtd9bYV0LNDXjTBbeIEJ1xSXqozHN137qQryIICrPp2kZg==",
   "success": true,
-  "projectFilePath": "s:\\Documents\\Programs\\homepage\\homepage.csproj",
+  "projectFilePath": "S:\\Documents\\Programs\\homepage\\homepage.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Moritz\\.nuget\\packages\\blazorwasmantivirusprotection\\2.4.0\\blazorwasmantivirusprotection.2.4.0.nupkg.sha512",
     "C:\\Users\\Moritz\\.nuget\\packages\\microsoft.aspnetcore.authorization\\6.0.10\\microsoft.aspnetcore.authorization.6.0.10.nupkg.sha512",
@@ -36,7 +36,7 @@
     "C:\\Users\\Moritz\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\Moritz\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
     "C:\\Users\\Moritz\\.nuget\\packages\\system.text.json\\6.0.0\\system.text.json.6.0.0.nupkg.sha512",
-    "C:\\Users\\Moritz\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.11\\microsoft.netcore.app.runtime.mono.browser-wasm.6.0.11.nupkg.sha512"
+    "C:\\Users\\Moritz\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.12\\microsoft.netcore.app.runtime.mono.browser-wasm.6.0.12.nupkg.sha512"
   ],
   "logs": []
 }

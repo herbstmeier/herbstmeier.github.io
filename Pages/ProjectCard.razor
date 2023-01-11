@@ -1,14 +1,14 @@
 @inject IStringLocalizer<Projects> Loc
 @inject NavigationManager NavManager
 
-<div class="card-container @(project.title=="redpoint-title"?"wip":"")">
+<div class="card-container @((project.title=="redpoint" || project.title=="bimeshof website")?"wip":"")">
     <span class="title highlight mtext">@Loc[project.title]</span>
     <img src="@project.imagePath">
     <p class="description stext">@Loc[project.description]</p>
     <ul class="tags">
         @foreach (var tag in project.tags)
         {
-            <li class="stext highlight" @onclick="(args) => TagSelected(args, tag)">@tag</li>
+            <li class="stext highlight hover-box" @onclick="(args) => TagSelected(args, tag)">@tag</li>
         }
     </ul>
     <button class="mtext" @onclick="()=>NavToProject(project.url)">@Loc["card-button"]</button>
