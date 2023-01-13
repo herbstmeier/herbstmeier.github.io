@@ -221,6 +221,10 @@ li.highlight::before {
     text-shadow: 1px 1px var(--primary-dark);
 }
 
+.link-container {
+    margin-bottom: 2rem;
+}
+
 .link-container a {
     position: relative;
     text-decoration: none;
