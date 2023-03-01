@@ -125,6 +125,10 @@ h1.highlight {
     content: 'github repository';
 }
 
+.site:hover::after {
+    content: 'go to website'
+}
+
 .hover-box::after {
     position: absolute;
     background-color: rgba(255, 255, 255, 0.8);
@@ -135,6 +139,10 @@ h1.highlight {
     width: max-content;
     padding: 0 5px;
     transform: translateX(-50%);
+}
+
+.link-container .hover-box::after {
+    top: -50%;
 }
 
 li.highlight::before {
@@ -222,6 +230,8 @@ li.highlight::before {
 }
 
 .link-container {
+    display: flex;
+    gap: 2rem;
     margin-bottom: 2rem;
 }
 
