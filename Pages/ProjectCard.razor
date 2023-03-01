@@ -2,16 +2,25 @@
 @inject NavigationManager NavManager
 
 <div class="card-container @((project.title=="redpoint")?"wip":"")">
-    <span class="title highlight mtext">@Loc[project.title]</span>
-    <img src="@project.imagePath">
+    <div>
+        <span class="title highlight mtext">@Loc[project.title]</span>
+        <img src="@project.imagePath">
+    </div>
+
+
+
     <p class="description stext">@Loc[project.description]</p>
-    <ul class="tags">
-        @foreach (var tag in project.tags)
-        {
-            <li class="stext highlight hover-box" @onclick="(args) => TagSelected(args, tag)">@tag</li>
-        }
-    </ul>
-    <button class="mtext" @onclick="()=>NavToProject(project.url)">@Loc["card-button"]</button>
+    <div>
+        <ul class="tags">
+            @foreach (var tag in project.tags)
+            {
+                <li class="stext highlight hover-box" @onclick="(args) => TagSelected(args, tag)">@tag</li>
+            }
+        </ul>
+        <button class="mtext" @onclick="()=>NavToProject(project.url)">@Loc["card-button"]</button>
+    </div>
+
+
 </div>
 
 @code {
