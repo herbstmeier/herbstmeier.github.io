@@ -1,9 +1,37 @@
 @page "/projects/portfolio"
+@using System.Globalization
+@inject IStringLocalizer<Projects> Loc
 
 <div class="heading-container">
     <h1 class="highlight ltext">portfolio website</h1>
 </div>
 
 <div class="link-container">
-    <a class="hover-box github" href="https://github.com/herbstmeier/herbstmeier.github.io" target="_blank"><img class="icon" src="img/icons/github.svg" alt=""></a>
+    <a class="hover-box github" href="https://github.com/herbstmeier/herbstmeier.github.io" target="_blank"><img
+            class="icon" src="img/icons/github.svg" alt=""></a>
 </div>
+
+@if (CultureInfo.CurrentCulture.TwoLetterISOLanguageName == "en")
+{
+    <p>
+        with this website i had several goals in mind. the main purpose is to present my skills in a practical way as i am
+        no natural at self advertising. similarly, i wanted to make it easier for potential employers to see what experience
+        i offer. and last but not least it gave me the opportunity to learn a new web development framework as the project
+        wasn't going to be very complex.
+    </p>
+
+    <h2>the framework</h2>
+    <p>
+        up until this point i had only worked with angular. i enjoy coding in typescript and both the easy scss/sass
+        integration and the html directives are a definite plus. the obvious choice for the next framework to learn would
+        have been react. it is very popular among the web development community and supposedly has a managable learning
+        curve.
+        however i had recently heard about blazor and the thought of coding for the web in C# caught my interest.
+    </p>
+    
+}
+else
+{
+
+}
+
