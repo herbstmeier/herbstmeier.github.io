@@ -41,7 +41,7 @@ public static class ProjectData
                 "bimeshof website",
                 "bimeshof-description",
                 "img/projects/bimeshof.png",
-                new String[] { "HTML", "CSS" },
+                new String[] { "HTML", "JavaScript", "CSS", "PHP" },
                 "bimeshof"
             )
         );

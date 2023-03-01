@@ -1,9 +1,9 @@
 @page "/projects/alarm"
 @using System.Globalization
-@* <PageTitle>moritz herbstmeier | @Loc["title"]</PageTitle> *@
+@inject IStringLocalizer<Projects> Loc
 
 <div class="heading-container">
-    <h1 class="highlight ltext">light alarm</h1>
+    <h1 class="highlight ltext">@Loc["alarm-title"]</h1>
 </div>
 
 <div class="link-container">
@@ -11,110 +11,229 @@
             src="img/icons/github.svg" alt=""></a>
 </div>
 
-<p>a light alarm is an alarm clock that works not by playing audio, but by illuminating your room. ideally it simulates
-    the sun rising in the morning so you awake calmly even during the winter months. this project is part electronics
-    design and part embedded software development.
-</p>
-<h4>features:</h4>
-<ul>
-    <li>gradual brightness increase reaching 100% at the selected alarm time and starting 30 minutes before</li>
-    <li>7 segment display to view either the alarm time or the current time</li>
-    <li>rotary encoder to switch through views and edit the alarm time</li>
-    <li>3 way switch to select between alarm, lamp and off modes</li>
-    <li>adjustable brightness in lamp mode</li>
-</ul>
+@if (CultureInfo.CurrentCulture.TwoLetterISOLanguageName == "en")
+{
+    <p> a light alarm is an alarm clock that works not by playing audio, but by illuminating your room.ideally it simulates
+        the sun rising in the morning so you awake calmly even during the winter months. this project is part electronics
+        design and part embedded software development.</p>
 
-<h2>electronics</h2>
-<p>the electronics design can be split up into these parts:</p>
-<ul>
-    <li>microcontroller</li>
-    <li>led</li>
-    <li>7 segment display</li>
-    <li>control components</li>
-    <li>miscellaneous components</li>
-</ul>
-<h4>microcontroller</h4>
-<p>the centerpiece of this project is an arduino nano. i had one lying around and it allows
-    for easy through hole design at a relatively small size. to keep the time i use a cr2032 rtc which communicates with
-    the arduino via its i2c bus.
-</p>
-
-<h4>led</h4>
-<p>
-    the other critical component is the led. for this purpose a
-    rather powerful led is needed. otherwise the desired wake up effect may not
-    be reached. therefore i used a cob led rated for 710lm at 12V with a warm white color. pro tip: don't stare directly
-    at a bright light as you turn it on. it hurts.<br>
-    pwm is used to control the brightness of the led. the driver mosfet receives the control signal directly from the
-    arduino.
-</p>
-
-<h4>7 segment display</h4>
-<p>a 7 segment display works by periodically updating which of its 7 (8 with a decimal point) leds light up. to form an
-    easily legible hh.mm clock i use 4 diplay pieces so 29 digital connections are needed. the arduino nano has 14
-    digital pins. its 8 analog pins can also be used, but two of those are responsible for i2c communication. plus, it
-    simply is neither efficient nor pretty. a shift
-    register solves this problem. it receives the correct led layout serially from the arduino and
-    puts it out in parallel. to update the display i cycle through updating the 4 pieces one after another. only 6
-    digital pins are required then (1 per diplay piece + shift register data and clock).
-</p>
-
-<h4>control components</h4>
-<p>there are three control components. the 3 way mode switch, the rotary encoder and the brightness control
-    potentiometer.
-    the mode switch is hooked up directly to digital pins. the brightness potentiometer send an analog voltage to the
-    arduino.
-    i use a debouncing circuit for the rotary encoder which i found in its datasheet. other than that it is also
-    directly connected to the nano. the encoder inputs are handled by interrupts.
-</p>
-
-<h4>miscellaneous components</h4>
-<p>these include current limiting (and other) resistors, bipolar transistors for delivering power to the 7 segment leds
-    and bypass capacitors.
-</p>
-
-<img class="alarm-image" src="img/projects/alarm.png" alt="">
-
-<h4>assembly</h4>
-<p>i assembled the circuit on a prototype board with liberal use of wires. the layout is pictured below. more fotos will follow shortly.</p>
-<img class="alarm-image" src="img/projects/alarmboard.png" alt="">
-
-<h2>software</h2>
-<p>to describe the software i will simplify complex behaviours in order to improve ease of understanding. all the code
-    is available to view on github.
-</p>
-<h4>main flow</h4>
-<ul style="list-style: decimal;">
-    <li>get current time</li>
-    <li>check for daylight savings time</li>
-    <li>get mode:</li>
+    <h4>features:</h4>
     <ul>
-        <li>alarm -> enter alarm flow</li>
-        <li>lamp -> set led brightness according to potentiometer setting</li>
-        <li>off -> turn off led</li>
+        <li>gradual brightness increase reaching 100% at the selected alarm time and starting 30 minutes before</li>
+        <li>7 segment display to view either the alarm time or the current time</li>
+        <li>rotary encoder to switch through views and edit the alarm time</li>
+        <li>3 way switch to select between alarm, lamp and off modes</li>
+        <li>adjustable brightness in lamp mode</li>
     </ul>
-    <li>enter display flow</li>
-</ul>
 
-<h4>alarm flow</h4>
-<ul style="list-style: decimal;">
-    <li>adjust current time for daylight savings time</li>
-    <li>check alarm state:</li>
+    <h2>electronics</h2>
+    <p>the electronics design can be split up into these parts:</p>
     <ul>
-        <li>off -> wait for alarm time</li>
-        <li>fading in -> set led brightness and wait for fade end</li>
-        <li>static -> set led to full brightness</li>
+        <li>microcontroller</li>
+        <li>led</li>
+        <li>7 segment display</li>
+        <li>control components</li>
+        <li>miscellaneous components</li>
     </ul>
-</ul>
+    <h4>microcontroller</h4>
+    <p>the centerpiece of this project is an arduino nano. i had one lying around and it allows
+        for easy through hole design at a relatively small size. to keep the time i use a cr2032 rtc which communicates with
+        the arduino via its i2c bus.
+    </p>
 
-<h4>display flow</h4>
-<ul style="list-style: decimal;">
-    <li>check display mode:</li>
-    <ul>
-        <li>current time</li>
-        <li>alarm time</li>
-        <li>alarm time, edit hours</li>
-        <li>alarm time, edit minutes</li>
+    <h4>led</h4>
+    <p>
+        the other critical component is the led. for this purpose a
+        rather powerful led is needed. otherwise the desired wake up effect may not
+        be reached. therefore i used a cob led rated for 710lm at 12V with a warm white color. pro tip: don't stare directly
+        at a bright light as you turn it on. it hurts.<br>
+        pwm is used to control the brightness of the led. the driver mosfet receives the control signal directly from the
+        arduino.
+    </p>
+
+    <h4>7 segment display</h4>
+    <p>a 7 segment display works by periodically updating which of its 7 (8 with a decimal point) leds light up. to form an
+        easily legible hh.mm clock i use 4 diplay pieces so 29 digital connections are needed. the arduino nano has 14
+        digital pins. its 8 analog pins can also be used, but two of those are responsible for i2c communication. plus, it
+        simply is neither efficient nor pretty. a shift
+        register solves this problem. it receives the correct led layout serially from the arduino and
+        puts it out in parallel. to update the display i cycle through updating the 4 pieces one after another. only 6
+        digital pins are required then (1 per diplay piece + shift register data and clock).
+    </p>
+
+    <h4>control components</h4>
+    <p>there are three control components. the 3 way mode switch, the rotary encoder and the brightness control
+        potentiometer.
+        the mode switch is hooked up directly to digital pins. the brightness potentiometer send an analog voltage to the
+        arduino.
+        i use a debouncing circuit for the rotary encoder which i found in its datasheet. other than that it is also
+        directly connected to the nano. the encoder inputs are handled by interrupts.
+    </p>
+
+    <h4>miscellaneous components</h4>
+    <p>these include current limiting (and other) resistors, bipolar transistors for delivering power to the 7 segment leds
+        and bypass capacitors.
+    </p>
+
+    <img class="alarm-image" src="img/projects/alarm.png" alt="">
+
+    <h4>assembly</h4>
+    <p>i assembled the circuit on a prototype board with liberal use of wires. the layout is pictured below. more fotos will
+        follow shortly.</p>
+    <img class="alarm-image" src="img/projects/alarmboard.png" alt="">
+
+    <h2>software</h2>
+    <p>to describe the software i will simplify complex behaviours in order to improve ease of understanding. all the code
+        is available to view on github.
+    </p>
+    <h4>main flow</h4>
+    <ul style="list-style: decimal;">
+        <li>get current time</li>
+        <li>check for daylight savings time</li>
+        <li>get mode:</li>
+        <ul>
+            <li>alarm -> enter alarm flow</li>
+            <li>lamp -> set led brightness according to potentiometer setting</li>
+            <li>off -> turn off led</li>
+        </ul>
+        <li>enter display flow</li>
     </ul>
-    <li>cycle through the four 7 segment pieces and set corresponding leds</li>
-</ul>
+
+    <h4>alarm flow</h4>
+    <ul style="list-style: decimal;">
+        <li>adjust current time for daylight savings time</li>
+        <li>check alarm state:</li>
+        <ul>
+            <li>off -> wait for alarm time</li>
+            <li>fading in -> set led brightness and wait for fade end</li>
+            <li>static -> set led to full brightness</li>
+        </ul>
+    </ul>
+
+    <h4>display flow</h4>
+    <ul style="list-style: decimal;">
+        <li>check display mode:</li>
+        <ul>
+            <li>current time</li>
+            <li>alarm time</li>
+            <li>alarm time, edit hours</li>
+            <li>alarm time, edit minutes</li>
+        </ul>
+        <li>cycle through the four 7 segment pieces and set corresponding leds</li>
+    </ul>
+}
+else
+{
+    <p> ein lichtwecker funktioniert nicht, indem klänge abgespielt werden, sondern durch die beleuchtung des schlafzimmers.
+        idealerweise simuliert der wecker den sonnenaufgang, um auch im winter ein sanftes aufwachen zu ermöglichen.
+        dieses projekt besteht aus elektronik-design und embedded-software-entwicklung.</p>
+
+    <h4>funktionen:</h4>
+    <ul>
+        <li>graduelle helligkeits-steigerung, die bei der eingestellten weck-zeit 100% erreicht</li>
+        <li>7-segment-anzeige, um entwerde die weck-zeit oder die aktuelle zeit darzustellen</li>
+        <li>drehregler, um den anzeigemodus oder die weck-zeit zu ändern</li>
+        <li>auswahl zwischen wecker-, lampe- und aus-modus mit einem 3-weg-schalter</li>
+        <li>einstellbare helligkeit im lampenmodus</li>
+    </ul>
+
+    <h2>elektronik</h2>
+    <p>das elektronik-design kann in diese aspekte aufgeteilt werden:</p>
+    <ul>
+        <li>microkontroller</li>
+        <li>led</li>
+        <li>7-segment-anzeige</li>
+        <li>kontroll-komponenten</li>
+        <li>sonstige komponenten</li>
+    </ul>
+    <h4>microkontroller</h4>
+    <p>das herzstück dieses projekts ist ein arduino nano. ich hatte einen herumliegen und es ist leicht, damit through-hole
+        projekte zu konzipieren und diese mit relativ geringer größe aufzubauen. um stets die zeit zu wissen, verwende ich
+        einen cr2032 rtc, der über den i2c bus mit dem arduino kommuniziert.
+    </p>
+
+    <h4>led</h4>
+    <p>
+        das nächste wichtige bauteil ist die led. für diesen verwendungszweck ist eine sehr helle led notwendig. sonst ist
+        es möglich, dass man nicht durch das licht aufwacht. ich verwende eine cob-led (cuircit on board), die bei 12V ein
+        warmweißes Licht mit einer Helligkeit von 710lm produziert. pro tip: nicht direkt in die lampe starren, wenn sie
+        angeht. das tut weh.<br>
+        die helligkeit wird anhand von pwm geregelt. der treiber-mosfet erhält das kontroll-signal direkt vom arduino.
+    </p>
+
+    <h4>7-segment-anzeige</h4>
+    <p>
+        eine 7-segment-anzeige funktioniert, indem regelmäßig aktualisiert wird welche der 7 (8 mit
+        dezimalpunkt) leds aufleuchtet. um eine uhr mit dem leicht lesbaren format hh.mm darzustellen, brauche ich 4
+        anzeigenteile und dementsprechend 29 digitale verbindungen. der arduino nano hat 14 digitale pins. seine 8 analogen
+        pins können auch verwendet werden, aber zwei davon sind für die i2c-kommunikation verantwortlich. außerdem ist es
+        schlicht ineffizient und unschön. die lösung ist ein schieberegister. dieses erhält das korrekte led-layout seriell
+        vom arduino und gibt es parallel aus. um die anzeige zu verändern, aktualisiere ich periodisch ein segment nach dem
+        anderen. so sind nur 6 digitale pins nötig (1 pro segment + schieberegister data und clock).
+    </p>
+
+    <h4>kontroll-komponenten</h4>
+    <p>
+        der wecker hat drei kontroll-komponenten. den 3-weg-schalter, der drehregler und das potentiometer, mit dem die
+        helligkeit eingestellt wird. der schalter für die drei funktions-modi ist direkt an digitale pins angeschlossen. das
+        potentiometer sendet eine analoge spannung an den arduino. für den drehregler verwende ich eine entprell-schaltung,
+        welche im datenblatt des reglers abgebildet ist. abgesehen davon ist er auch direkt mit dem arduino verbunden. die
+        eingaben am drehregler werden mit interrupts verarbeitet.
+    </p>
+
+    <h4>sonstige komponenten</h4>
+    <p>
+        hier sind stromlimitierende (und andere) widerstände, bipolare transistoren zum treiben der 7-segment-anzeige und
+        bypass-kondensatoren enthalten.
+    </p>
+
+    <img class="alarm-image" src="img/projects/alarm.png" alt="">
+
+    <h4>aufbau</h4>
+    <p>
+        ich habe die schaltung auf prototypen-platinen aufgebaut, ohne dabei an kabeln zu sparen. das entsprechende layout
+        ist unten zu sehen. es kommen noch mehr fotos dazu.
+    </p>
+    <img class="alarm-image" src="img/projects/alarmboard.png" alt="">
+
+    <h2>software</h2>
+    <p>
+        ich werde bei der erklärung der software komplexe verhalten vereinfachen, um sie verständlicher darzustellen. der
+        gesamte code ist auf github verfügbar.
+    </p>
+    <h4>main flow</h4>
+    <ul style="list-style: decimal;">
+        <li>aktuelle zeit abfragen</li>
+        <li>auf sommerzeit prüfen</li>
+        <li>modus abfragen:</li>
+        <ul>
+            <li>alarm -> springe zu wecker flow</li>
+            <li>lampe -> led helligkeit entsprechend des potentiometer-wertes einstellen</li>
+            <li>aus -> led ausschalten</li>
+        </ul>
+        <li>springe zu anzeige flow</li>
+    </ul>
+
+    <h4>wecker flow</h4>
+    <ul style="list-style: decimal;">
+        <li>aktuelle zeit je nach sommerzeit anpassen</li>
+        <li>wecker-status überprüfen:</li>
+        <ul>
+            <li>aus -> warte auf weck-zeit</li>
+            <li>einblenden -> led helligkeit einstellen und auf ende des einblendens warten</li>
+            <li>statisch -> led auf volle helligkeit setzen</li>
+        </ul>
+    </ul>
+
+    <h4>anzeige flow</h4>
+    <ul style="list-style: decimal;">
+        <li>anzeige modus abfragen:</li>
+        <ul>
+            <li>aktuelle zeit</li>
+            <li>weck-zeit</li>
+            <li>weck-zeit, stunden verändern</li>
+            <li>weck-zeit, minuten verändern</li>
+        </ul>
+        <li>die vier anzeige-segmente periodisch aktualisieren</li>
+    </ul>
+}

@@ -41,9 +41,9 @@ a {
     content: 'work in progress';
     position: absolute;
     z-index: 0;
-    font-size: 4rem;
+    font-size: calc(3rem + 1vh);
     font-weight: bold;
-    transform: rotate(350deg);
-    top: 10%;
-    left: 10%;
+    transform: translate(-50%,-50%) rotate(350deg);
+    top: 50%;
+    left: 50%;
 }

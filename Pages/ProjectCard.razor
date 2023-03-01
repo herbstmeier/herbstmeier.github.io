@@ -1,7 +1,7 @@
 @inject IStringLocalizer<Projects> Loc
 @inject NavigationManager NavManager
 
-<div class="card-container @((project.title=="redpoint" || project.title=="bimeshof website")?"wip":"")">
+<div class="card-container @((project.title=="redpoint")?"wip":"")">
     <span class="title highlight mtext">@Loc[project.title]</span>
     <img src="@project.imagePath">
     <p class="description stext">@Loc[project.description]</p>
