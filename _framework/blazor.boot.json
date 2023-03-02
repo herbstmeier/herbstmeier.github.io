@@ -7,7 +7,7 @@
   "linkerEnabled": true,
   "resources": {
     "assembly": {
-      "homepage.bin": "sha256-1NBXh7+tSjEXW2gt6QKiv2CGgF10sKlNLuMO7xnOudA=",
+      "homepage.bin": "sha256-bjQcYow+qcTo97lTLw3cK6mF0PT+xdxL8BqM0hJjfGc=",
       "Microsoft.AspNetCore.Components.bin": "sha256-5e9Huq+Xp83zwB0psVxH+SoTm4ItxDIdIg62rSVlzeI=",
       "Microsoft.AspNetCore.Components.Web.bin": "sha256-lxTOzhK4cSMldDj9kxQykCN6uUPBYJ+QX9Rh+wvuB7g=",
       "Microsoft.AspNetCore.Components.WebAssembly.bin": "sha256-aGfncPsSqEyoKRatCWdsnUkiv0c+ODA36034XYmliIc=",
